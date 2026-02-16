@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deepfinds - Results</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "deeplinks-primary": "#e53e3e",
+            "deeplinks-secondary": "#ffd700",
+            "deeplinks-text": "#2d3748",
+            "deeplinks-muted": "#a0aec0",
+            "deeplinks-bg": "#f7fafc",
+            "deeplinks-card": "#ffffff",
+          },
+        },
+      },
+    };
+  </script>
+  <script src="js/latest.js" data-utmify-prevent-xcod-sck="" data-utmify-prevent-subids="" async="" defer=""></script>
+</head>
+
+<body class="min-h-screen bg-gray-50 relative">
+  <!-- Background decorative elements -->
+  <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+    <div class="absolute top-20 left-10 w-20 h-20 bg-red-100 rounded-full opacity-20 animate-pulse"></div>
+    <div class="absolute top-40 right-20 w-16 h-16 bg-yellow-100 rounded-full opacity-20 animate-pulse" style="animation-delay: 1s"></div>
+    <div class="absolute bottom-40 left-20 w-24 h-24 bg-blue-100 rounded-full opacity-20 animate-pulse" style="animation-delay: 2s"></div>
+    <div class="absolute bottom-20 right-10 w-12 h-12 bg-green-100 rounded-full opacity-20 animate-pulse" style="animation-delay: 0.5s"></div>
+  </div>
+
+  <!-- Warning Banner -->
+  <div class="bg-gradient-to-r from-red-600 via-red-700 to-red-800 text-white py-8 px-4 text-center relative overflow-hidden">
+    <div class="absolute inset-0 bg-black opacity-10"></div>
+    <div class="relative z-10">
+      <div class="flex items-center justify-center mb-4">
+        <div class="text-4xl mr-3 animate-pulse">⚠️</div>
+        <h1 class="text-3xl md:text-4xl font-bold tracking-wide">
+          WARNING: BETRAYAL DETECTED
+        </h1>
+        <div class="text-4xl ml-3 animate-pulse">⚠️</div>
+      </div>
+      <p class="text-xl md:text-2xl mt-4 font-medium">
+        Your partner has been engaging in suspicious activities
+      </p>
+      <div class="mt-4 flex items-center justify-center space-x-2">
+        <div class="w-3 h-3 bg-red-300 rounded-full animate-pulse"></div>
+        <div class="w-3 h-3 bg-red-300 rounded-full animate-pulse" style="animation-delay: 0.2s"></div>
+        <div class="w-3 h-3 bg-red-300 rounded-full animate-pulse" style="animation-delay: 0.4s"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-4 py-12 relative z-10">
+    <!-- Report Header -->
+    <div class="bg-white rounded-2xl p-8 mb-8 shadow-xl border-2 border-red-200 bg-gradient-to-br from-white to-red-50">
+      <div class="text-center">
+        <div class="flex flex-col items-center justify-center mb-6 sm:flex-row">
+          <div class="text-4xl sm:text-5xl mr-0 sm:mr-4 mb-2 sm:mb-0">📊</div>
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800">
+            COMPREHENSIVE SCAN REPORT
+          </h2>
+          <div class="text-4xl sm:text-5xl ml-0 sm:ml-4 mt-2 sm:mt-0">🔍</div>
+        </div>
+
+        <!-- User Profile Section -->
+        <div class="flex flex-col items-center justify-center mb-6">
+          <div id="user-profile-pic" class="w-20 h-20 sm:w-24 sm:h-24 bg-gray-300 rounded-full flex items-center justify-center mb-3 overflow-hidden">
+            <span class="text-3xl sm:text-4xl">👤</span>
+          </div>
+          <div class="text-xl sm:text-2xl font-bold text-gray-800" id="target-phone-display">
+            Loading...
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-gray-500">
+          <div class="bg-white rounded-lg p-4 shadow-md border border-gray-200">
+            <div class="flex items-center justify-center mb-2">
+              <span class="text-2xl mr-2">📅</span>
+              <span class="font-semibold text-lg">Report exported:</span>
+            </div>
+            <div class="text-base font-medium text-gray-700" id="report-date"></div>
+          </div>
+          <div class="bg-white rounded-lg p-4 shadow-md border border-gray-200">
+            <div class="flex items-center justify-center mb-2">
+              <span class="text-2xl mr-2">📍</span>
+              <span class="font-semibold text-lg">Location:</span>
+            </div>
+            <div class="text-base font-medium text-gray-700" id="user-location">
+              Loading...
+            </div>
+          </div>
+          <div class="bg-white rounded-lg p-4 shadow-md border border-red-300">
+            <div class="flex items-center justify-center mb-2">
+              <span class="text-2xl mr-2">🚨</span>
+              <span class="font-semibold text-lg">Status:</span>
+            </div>
+            <div class="text-base font-bold text-red-600 bg-red-100 px-3 py-1 rounded-full">
+              COMPROMISED
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scan Results -->
+    <div class="mb-12">
+      <div class="text-center mb-8">
+        <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-4 flex items-center justify-center">
+          <span class="text-2xl sm:text-3xl md:text-4xl mr-2 sm:mr-3">🔍</span>
+          <span class="text-base sm:text-lg md:text-xl">DETECTED THREATS</span>
+          <span class="text-2xl sm:text-3xl md:text-4xl ml-2 sm:ml-3">⚠️</span>
+        </h3>
+        <p class="text-lg text-gray-500">
+          Critical security violations found on target device
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="scan-results">
+        <!-- Results will be populated by JavaScript -->
+      </div>
+    </div>
+
+    <!-- Detailed Analysis Section -->
+    <div class="bg-white rounded-2xl p-8 mb-12 shadow-xl bg-gradient-to-br from-white to-yellow-50 border-2 border-yellow-300">
+      <div class="text-center mb-8">
+        <div class="flex flex-col sm:flex-row items-center justify-center mb-6 text-center sm:text-left">
+          <span class="text-4xl sm:text-5xl mb-2 sm:mb-0 sm:mr-4">📋</span>
+          <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800">
+            DETAILED ANALYSIS REPORT
+          </h3>
+          <span class="text-4xl sm:text-5xl mt-2 sm:mt-0 sm:ml-4">🔎</span>
+        </div>
+      </div>
+
+      <div class="space-y-4 text-left max-w-4xl mx-auto">
+        <div class="bg-white rounded-lg p-6 shadow-md border-l-4 border-red-400">
+          <p class="text-base sm:text-lg text-gray-800">
+            <span class="font-bold text-red-600" id="analysis-phone-1">+1234567890</span><br>
+            Our system has detected that this number frequently communicates
+            with a person located near
+            <span class="font-bold text-blue-600" id="analysis-location-1">Unknown</span>.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-lg p-6 shadow-md border-l-4 border-orange-400">
+          <p class="text-base sm:text-lg text-gray-800">
+            We found
+            <span class="font-bold text-red-600">58 suspicious messages</span>:
+          </p>
+          <ul class="mt-3 space-y-2 ml-4">
+            <li class="text-sm sm:text-base text-gray-700">
+              • The 13 posts contained the word/similar
+              <span class="font-semibold text-red-600">"delicious"</span>.
+            </li>
+            <li class="text-sm sm:text-base text-gray-700">
+              • The 41 messages contained the word/similar
+              <span class="font-semibold text-red-600">"Love"</span>.
+            </li>
+            <li class="text-sm sm:text-base text-gray-700">
+              • 20 photos and 5 videos are hidden by a password on the phone
+              (<span class="font-mono font-semibold" id="analysis-phone-2">+1234567890</span>)…
+            </li>
+            <li class="text-sm sm:text-base text-gray-700">
+              • The 8 messages contained the word/similar
+              <span class="font-semibold text-red-600">"Secret"</span>.
+            </li>
+            <li class="text-sm sm:text-base text-gray-700">
+              • 2 archived conversations have been marked as suspicious (<span class="font-mono font-semibold" id="analysis-phone-3">+1234567890</span>)
+            </li>
+            <li class="text-sm sm:text-base text-gray-700">
+              • There is an unregistered contact who frequently sends many
+              messages and says he has nostalgia.
+            </li>
+            <li class="text-sm sm:text-base text-gray-700">
+              • 9 recently received single-view images were also identified
+              and restored.
+            </li>
+            <li class="text-sm sm:text-base text-gray-700">
+              • 7 suspicious locations have been detected near
+              <span class="font-bold text-blue-600" id="analysis-location-2">Unknown</span>..
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-lg p-6 shadow-md border-l-4 border-purple-400">
+          <h4 class="font-bold text-lg sm:text-xl text-gray-800 mb-3">
+            Activity Log
+          </h4>
+          <p class="text-xs text-gray-500 mb-4">[older logs hidden]</p>
+          <div class="space-y-3 text-sm sm:text-base text-gray-700">
+            <div class="bg-gray-50 p-3 rounded">
+              <span class="font-mono text-xs text-gray-500">2025-08-12 23:41:08</span>
+              <p class="mt-1">
+                Suspicious message detected:
+                <span class="font-semibold text-red-600">"miss you"</span> (to
+                unknown contact)
+              </p>
+            </div>
+            <div class="bg-gray-50 p-3 rounded">
+              <span class="font-mono text-xs text-gray-500">2025-08-15 02:19:27</span>
+              <p class="mt-1">
+                Deleted video recovered (duration: 00:03:12, original sent at
+                01:47)
+              </p>
+            </div>
+            <div class="bg-gray-50 p-3 rounded">
+              <span class="font-mono text-xs text-gray-500">2025-08-21 00:12:44</span>
+              <p class="mt-1">
+                Hidden chat restored: 47 messages exchanged with saved name
+                <span class="font-semibold text-red-600">"Baby"</span>
+              </p>
+            </div>
+            <div class="bg-gray-50 p-3 rounded">
+              <span class="font-mono text-xs text-gray-500">2025-09-01 03:14:25</span>
+              <p class="mt-1">
+                Deleted voice note recovered:
+                <span class="font-semibold text-red-600">"don't tell anyone"</span>
+              </p>
+            </div>
+          </div>
+          <p class="text-xs text-gray-500 mt-4">
+            [newer logs available in full report]
+          </p>
+        </div>
+
+        <div class="bg-white rounded-lg p-6 shadow-md border-l-4 border-blue-400">
+          <p class="text-base sm:text-lg text-gray-800">
+            📍 The phone (<span class="font-mono font-semibold" id="analysis-phone-4">+1234567890</span>) you want to track was recently located here
+          </p>
+          <p class="text-sm sm:text-base text-gray-600 mt-2">
+            Private address: a private residence near
+            <span class="font-bold text-blue-600" id="analysis-location-3">Unknown</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Detection Results Section -->
+    <div class="bg-white rounded-2xl p-8 mb-12 shadow-xl bg-gradient-to-br from-white to-red-50 border-2 border-red-200">
+      <div class="text-center">
+        <div class="flex flex-col sm:flex-row items-center justify-center mb-8 text-center sm:text-left">
+          <span class="text-4xl sm:text-5xl mb-2 sm:mb-0 sm:mr-4">🔍</span>
+          <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800">
+            CRITICAL EVIDENCE DETECTED
+          </h3>
+          <span class="text-4xl sm:text-5xl mt-2 sm:mt-0 sm:ml-4">🚨</span>
+        </div>
+        <p class="text-base sm:text-lg md:text-xl text-gray-500 mb-8">
+          Concrete proof of suspicious activities found on target device
+        </p>
+
+        <!-- Location Tracking Detection -->
+        <div class="bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-300 rounded-xl p-6 shadow-lg mb-8">
+          <div class="flex items-start space-x-4">
+            <div class="text-4xl">📍</div>
+            <div class="flex-1">
+              <p class="text-lg text-gray-800 mb-4">
+                The phone (<span class="font-mono font-semibold text-blue-600" id="location-tracking-phone">Loading...</span>) you want to track was recently located here
+              </p>
+              <p class="text-base text-gray-700 mb-4">
+                Private address: a private residence near
+                <span class="font-bold text-blue-600" id="location-tracking-city">Loading...</span>
+              </p>
+              <div class="w-full max-w-2xl mx-auto">
+                <img src="images/map.png" alt="Location Map" class="w-full rounded-lg shadow-lg border-2 border-blue-300">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          <!-- WhatsApp Messages Detection -->
+          <div class="bg-gradient-to-br from-red-50 to-red-100 border-2 border-red-300 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+            <div class="text-center">
+              <div class="text-7xl mb-6 p-4 bg-white rounded-full shadow-md inline-block">
+                💬
+              </div>
+              <h4 class="text-2xl md:text-3xl font-bold text-red-700 mb-6">
+                Suspicious WhatsApp Messages Detected
+              </h4>
+              <p class="text-lg text-gray-500 mb-6 bg-white p-4 rounded-lg shadow-sm">
+                <span class="font-semibold text-red-600">⚠️ Access Required:</span>
+                Get full access to view complete message history and deleted
+                conversations.
+              </p>
+              <div class="relative w-full max-w-sm mx-auto">
+                <div class="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full font-bold animate-pulse">
+                  LIVE
+                </div>
+                <img src="images/img-1.webp" alt="WhatsApp messages detection" class="w-full rounded-lg shadow-lg border-2 border-red-300">
+              </div>
+            </div>
+          </div>
+
+          <!-- Photos and Videos Detection -->
+          <div class="bg-gradient-to-br from-red-50 to-red-100 border-2 border-red-300 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+            <div class="text-center">
+              <div class="text-7xl mb-6 p-4 bg-white rounded-full shadow-md inline-block">
+                📸
+              </div>
+              <h4 class="text-2xl md:text-3xl font-bold text-red-700 mb-6">
+                Inappropriate Media Content Found
+              </h4>
+              <p class="text-lg text-gray-500 mb-6 bg-white p-4 rounded-lg shadow-sm">
+                <span class="font-semibold text-red-600">⚠️ Access Required:</span>
+                View uncensored photos and videos without any restrictions.
+              </p>
+              <div class="relative w-full max-w-sm mx-auto">
+                <div class="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full font-bold animate-pulse">
+                  LIVE
+                </div>
+                <img src="images/img-2.webp" alt="Photos and videos detection" class="w-full rounded-lg shadow-lg border-2 border-red-300">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="/#button-link" target="_blank" class="w-full md:w-auto block md:inline-block text-xl md:text-3xl font-bold bg-gradient-to-r from-red-600 via-red-700 to-red-800 text-white py-6 px-8 md:px-16 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 text-center animate-bounce button-link">
+      🚨 Click Here To Expose Everything – 90% OFF 🚨
+    </a>
+    <!-- How It Works Section -->
+    <div class="bg-white rounded-2xl p-8 mb-12 shadow-xl bg-gradient-to-br from-white to-blue-50 border-2 border-blue-200">
+      <div class="text-center">
+        <div class="flex flex-col sm:flex-row items-center justify-center mb-6 text-center sm:text-left">
+          <span class="text-4xl sm:text-5xl mb-2 sm:mb-0 sm:mr-4">⚙️</span>
+          <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800">
+            How It Works
+          </h3>
+          <span class="text-4xl sm:text-5xl mt-2 sm:mt-0 sm:ml-4">🎯</span>
+        </div>
+        <p class="text-lg text-gray-600 mb-8">
+          Watch this quick video and see exactly how the system gives you
+          instant access and complete control — discreetly, securely, and
+          without detection.
+        </p>
+
+        <div class="relative w-full max-w-4xl mx-auto">
+          <vturb-smartplayer id="vid-68d3a45619ffd7a146fe88cf" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>
+          <script type="text/javascript"> var s = document.createElement("script"); s.src = "https://scripts.converteai.net/155f8fd6-7b7f-4008-8b29-65593dca7f17/players/68d3a45619ffd7a146fe88cf/v4/player.js", s.async = !0, document.head.appendChild(s); </script>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pricing Section -->
+    <div class="bg-white rounded-2xl p-8 mb-12 border-4 border-red-500 shadow-2xl bg-gradient-to-br from-red-50 to-white relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-32 h-32 bg-red-100 rounded-full -translate-y-16 translate-x-16 opacity-50"></div>
+      <div class="absolute bottom-0 left-0 w-24 h-24 bg-red-200 rounded-full translate-y-12 -translate-x-12 opacity-50"></div>
+
+      <div class="text-center relative z-10">
+        <div class="flex flex-col sm:flex-row items-center justify-center mb-6 text-center sm:text-left">
+          <span class="text-4xl sm:text-5xl mb-2 sm:mb-0 sm:mr-4">💰</span>
+          <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800">
+            FREE CONSULTATION COMPLETE
+          </h3>
+          <span class="text-4xl sm:text-5xl mt-2 sm:mt-0 sm:ml-4">⏰</span>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 mb-8 shadow-lg border-2 border-red-200">
+          <div class="text-xl text-gray-800 mb-4">
+            The scan of
+            <span class="font-bold text-red-600 bg-red-100 px-3 py-1 rounded-full" id="pricing-phone">Loading...</span>
+            revealed more than 5% of hidden activity…
+          </div>
+        </div>
+
+        <div class="space-y-6 mb-8 text-left max-w-4xl mx-auto">
+          <div class="bg-white rounded-lg p-6 shadow-md border-l-4 border-red-400">
+            <p class="text-lg text-gray-800 flex items-start">
+              <span class="text-2xl mr-3">💭</span>I know you're tired of
+              guessing and want some real answers.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-lg p-6 shadow-md border-l-4 border-yellow-400">
+            <p class="text-lg text-gray-800 flex items-start">
+              <span class="text-2xl mr-3">🛰️</span>
+              Our satellite tracking system is the most advanced technology to
+              find out what's going on. But there's a catch: keeping the
+              satellites and servers running 24/7 is expensive.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-lg p-6 shadow-md border-l-4 border-blue-400">
+            <p class="text-lg text-gray-800 flex items-start">
+              <span class="text-2xl mr-3">🔒</span>
+              That's why, unfortunately, we can't provide more than 5% of the
+              information we uncover for free.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-lg p-6 shadow-md border-l-4 border-green-400">
+            <p class="text-lg text-gray-800 flex items-start">
+              <span class="text-2xl mr-3">💡</span>
+              The good news? You don't have to spend a fortune to hire a
+              private investigator.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-lg p-6 shadow-md border-l-4 border-purple-400">
+            <p class="text-lg text-gray-800 flex items-start">
+              <span class="text-2xl mr-3">📱</span>
+              We've developed an app that puts that same technology in your
+              hands and lets you track everything discreetly and efficiently
+              on your own.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-lg p-6 shadow-md border-l-4 border-orange-400">
+            <p class="text-lg text-gray-800 flex items-start">
+              <span class="text-2xl mr-3">💎</span>
+              And the best part? The costs are a fraction of what you'd pay
+              for an investigator – just enough to keep our satellites and
+              system running.
+            </p>
+          </div>
+
+          <div class="bg-gradient-to-r from-red-100 to-red-200 rounded-lg p-6 shadow-lg border-2 border-red-300">
+            <p class="text-xl text-gray-800 font-bold text-center flex items-center justify-center">
+              <span class="text-3xl mr-3">⚡</span>
+              It's time to stop guessing and find out the truth. The answers
+              are waiting for you. Click now and get instant access – before
+              it's too late!
+              <span class="text-3xl ml-3">⚡</span>
+            </p>
+          </div>
+        </div>
+
+        <a href="/#button-link" target="_blank" class="w-full md:w-auto block md:inline-block text-xl md:text-3xl font-bold bg-gradient-to-r from-red-600 via-red-700 to-red-800 text-white py-6 px-8 md:px-16 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 text-center animate-bounce button-link">
+          🚨 🔥 90% OFF TODAY ONLY 🔥 🚨
+        </a>
+
+        <div class="bg-white rounded-2xl p-8 mb-8 shadow-xl border-2 border-red-300">
+          <div class="flex items-center justify-center mb-4">
+            <span class="text-3xl mr-3">📊</span>
+            <p class="text-lg text-gray-800 font-semibold">
+              Over 13,847 reports generated and counting
+            </p>
+          </div>
+
+          <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 mb-6">
+            <div class="text-center">
+              <span class="text-2xl md:text-3xl text-gray-500 line-through block">
+                Was: $470
+              </span>
+              <span class="text-sm text-gray-500">Regular Price</span>
+            </div>
+            <div class="text-center">
+              <span class="text-4xl md:text-5xl font-bold text-red-600 block">
+                Today: $47
+              </span>
+              <span class="text-sm text-red-500 font-semibold">
+                Limited Time Offer
+              </span>
+            </div>
+          </div>
+
+          <p class="text-lg text-gray-500 mb-6 text-center">
+            Hiring a private investigator costs $3,000+. Today, your full
+            report is just $47.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+            <div class="bg-green-50 rounded-lg p-4 border border-green-200">
+              <div class="text-2xl mb-2">✅</div>
+              <p class="font-semibold text-green-800">30-Day Warranty</p>
+            </div>
+            <div class="bg-blue-50 rounded-lg p-4 border border-blue-200">
+              <div class="text-2xl mb-2">🔒</div>
+              <p class="font-semibold text-blue-800">1-Year Secure Access</p>
+            </div>
+            <div class="bg-purple-50 rounded-lg p-4 border border-purple-200">
+              <div class="text-2xl mb-2">📱</div>
+              <p class="font-semibold text-purple-800">
+                Track up to 3 Numbers
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-yellow-50 rounded-xl p-6 mb-8 border-2 border-yellow-300">
+          <h4 class="text-2xl font-bold text-gray-800 mb-4 flex items-center justify-center">
+            <span class="text-3xl mr-3">⏰</span>
+            Why today?
+            <span class="text-3xl ml-3">⏰</span>
+          </h4>
+          <p class="text-lg text-gray-500 text-center">
+            Because every second your partner keeps sending new messages, old
+            data is being overwritten. The very proof you need may disappear
+            before your next attempt.
+          </p>
+        </div>
+
+        <a href="/#button-link" target="_blank" class="w-full md:w-auto block md:inline-block text-xl md:text-3xl font-bold bg-gradient-to-r from-red-600 via-red-700 to-red-800 text-white py-6 px-8 md:px-16 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 text-center mb-8 animate-bounce button-link">
+          🚨 Click Here To Expose Everything – 90% OFF 🚨
+        </a>
+      </div>
+    </div>
+
+    <!-- Final Chance Section -->
+    <div class="bg-white rounded-2xl p-8 mb-12 bg-gradient-to-br from-red-50 to-red-100 border-4 border-red-300 shadow-2xl relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-40 h-40 bg-red-200 rounded-full -translate-y-20 translate-x-20 opacity-30"></div>
+      <div class="absolute bottom-0 left-0 w-32 h-32 bg-red-300 rounded-full translate-y-16 -translate-x-16 opacity-30"></div>
+
+      <div class="text-center relative z-10">
+        <div class="flex flex-col sm:flex-row items-center justify-center mb-8 text-center sm:text-left">
+          <span class="text-4xl sm:text-6xl mr-0 sm:mr-4 animate-pulse">⏰</span>
+          <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-red-700 mt-4 sm:mt-0">
+            FINAL CHANCE - UNLOCK YOUR ANSWERS NOW
+          </h3>
+          <span class="text-4xl sm:text-6xl ml-0 sm:ml-4 animate-pulse mt-4 sm:mt-0">⚡</span>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 mb-8 shadow-lg border-2 border-red-300">
+          <p class="text-xl text-gray-800 font-semibold">
+            Don't let this opportunity slip away. The truth is waiting for
+            you.
+          </p>
+        </div>
+
+        <a href="/#button-link" target="_blank" class="w-full md:w-auto block md:inline-block text-xl md:text-3xl font-bold bg-gradient-to-r from-red-600 via-red-700 to-red-800 text-white py-6 px-8 md:px-16 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 text-center animate-bounce button-link">
+          🚨 Click Here To Expose Everything – 90% OFF 🚨
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Social Proof Section (from page4) -->
+  <div class="bg-white rounded-2xl p-8 mb-12 shadow-xl bg-gradient-to-br from-white to-blue-50">
+    <div class="text-center mb-8 sm:mb-12">
+      <div class="flex flex-col sm:flex-row items-center justify-center mb-4 sm:mb-6 gap-2 sm:gap-0">
+        <span class="text-4xl sm:text-5xl mr-0 sm:mr-4">💬</span>
+        <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800">
+          REAL CUSTOMER TESTIMONIALS
+        </h3>
+        <span class="text-4xl sm:text-5xl ml-0 sm:ml-4">⭐</span>
+      </div>
+      <p class="text-base sm:text-lg md:text-xl text-gray-500">
+        Hear from real people who found the truth
+      </p>
+    </div>
+
+    <div class="space-y-12">
+      <!-- Jessica's Testimonial -->
+      <div class="bg-gradient-to-br from-pink-50 to-pink-100 rounded-2xl p-8 shadow-lg border-2 border-pink-200 hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+        <div class="flex flex-col md:flex-row items-start space-y-6 md:space-y-0 md:space-x-8">
+          <div class="flex-shrink-0 text-center md:text-left">
+            <div class="w-20 h-20 bg-gradient-to-br from-pink-400 to-pink-600 rounded-full flex items-center justify-center shadow-lg mx-auto md:mx-0">
+              <span class="text-3xl">👩</span>
+            </div>
+            <div class="mt-4">
+              <div class="font-bold text-gray-800 text-xl">Jessica, 31</div>
+              <div class="text-pink-600 font-semibold">Orlando, FL</div>
+              <div class="flex items-center justify-center md:justify-start mt-2">
+                <span class="text-yellow-400 text-xl">⭐⭐⭐⭐⭐</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex-1">
+            <div class="bg-white rounded-xl p-6 shadow-md mb-6">
+              <p class="text-lg text-gray-800 italic leading-relaxed">
+                "I honestly didn't think it would work, but the report pulled
+                up deleted chats that explained everything. It felt like the
+                missing piece."
+              </p>
+            </div>
+            <div class="relative w-full max-w-lg mx-auto">
+              <div class="absolute -top-2 -right-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full font-bold">
+                VERIFIED
+              </div>
+              <vturb-smartplayer id="vid-68d3a4422acbc9a1a7481c7e" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>
+              <script type="text/javascript"> var s = document.createElement("script"); s.src = "https://scripts.converteai.net/155f8fd6-7b7f-4008-8b29-65593dca7f17/players/68d3a4422acbc9a1a7481c7e/v4/player.js", s.async = !0, document.head.appendChild(s); </script>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Amanda's Testimonial -->
+      <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 shadow-lg border-2 border-blue-200 hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+        <div class="flex flex-col md:flex-row items-start space-y-6 md:space-y-0 md:space-x-8">
+          <div class="flex-shrink-0 text-center md:text-left">
+            <div class="w-20 h-20 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center shadow-lg mx-auto md:mx-0">
+              <span class="text-3xl">👩</span>
+            </div>
+            <div class="mt-4">
+              <div class="font-bold text-gray-800 text-xl">Amanda, 44</div>
+              <div class="text-blue-600 font-semibold">Dallas, TX</div>
+              <div class="flex items-center justify-center md:justify-start mt-2">
+                <span class="text-yellow-400 text-xl">⭐⭐⭐⭐⭐</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex-1">
+            <div class="bg-white rounded-xl p-6 shadow-md mb-6">
+              <p class="text-lg text-gray-800 italic leading-relaxed">
+                "I was nervous, but within minutes it showed hidden messages
+                and even voice notes. That was the confirmation I needed."
+              </p>
+            </div>
+            <div class="relative w-full max-w-lg mx-auto">
+              <div class="absolute -top-2 -right-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full font-bold">
+                VERIFIED
+              </div>
+              <vturb-smartplayer id="vid-68d3a44b19ffd7a146fe88b9" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>
+              <script type="text/javascript"> var s = document.createElement("script"); s.src = "https://scripts.converteai.net/155f8fd6-7b7f-4008-8b29-65593dca7f17/players/68d3a44b19ffd7a146fe88b9/v4/player.js", s.async = !0, document.head.appendChild(s); </script>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Daniel's Testimonial -->
+      <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 shadow-lg border-2 border-green-200 hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+        <div class="flex flex-col md:flex-row items-start space-y-6 md:space-y-0 md:space-x-8">
+          <div class="flex-shrink-0 text-center md:text-left">
+            <div class="w-20 h-20 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center shadow-lg mx-auto md:mx-0">
+              <span class="text-3xl">👨</span>
+            </div>
+            <div class="mt-4">
+              <div class="font-bold text-gray-800 text-xl">Daniel, 38</div>
+              <div class="text-green-600 font-semibold">Fresno, CA</div>
+              <div class="flex items-center justify-center md:justify-start mt-2">
+                <span class="text-yellow-400 text-xl">⭐⭐⭐⭐⭐</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex-1">
+            <div class="bg-white rounded-xl p-6 shadow-md mb-6">
+              <p class="text-lg text-gray-800 italic leading-relaxed">
+                "It's not guesses or random alerts… it's actual proof. I saw
+                the screenshots myself. It's worth it."
+              </p>
+            </div>
+            <div class="relative w-full max-w-lg mx-auto">
+              <div class="absolute -top-2 -right-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full font-bold">
+                VERIFIED
+              </div>
+              <vturb-smartplayer id="vid-68d3a45e342529fb4b276cbe" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>
+              <script type="text/javascript"> var s = document.createElement("script"); s.src = "https://scripts.converteai.net/155f8fd6-7b7f-4008-8b29-65593dca7f17/players/68d3a45e342529fb4b276cbe/v4/player.js", s.async = !0, document.head.appendChild(s); </script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-white rounded-2xl p-8 mb-12 bg-gradient-to-br from-red-50 to-red-100 border-4 border-red-300 shadow-2xl relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-40 h-40 bg-red-200 rounded-full -translate-y-20 translate-x-20 opacity-30"></div>
+    <div class="absolute bottom-0 left-0 w-32 h-32 bg-red-300 rounded-full translate-y-16 -translate-x-16 opacity-30"></div>
+
+    <div class="text-center relative z-10">
+      <div class="flex flex-col sm:flex-row items-center justify-center mb-8 text-center sm:text-left">
+        <span class="text-4xl sm:text-6xl mr-0 sm:mr-4 animate-pulse">⏰</span>
+        <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-red-700 mt-4 sm:mt-0">
+          FINAL CHANCE - UNLOCK YOUR ANSWERS NOW
+        </h3>
+        <span class="text-4xl sm:text-6xl ml-0 sm:ml-4 animate-pulse mt-4 sm:mt-0">⚡</span>
+      </div>
+
+      <div class="bg-white rounded-xl p-6 mb-8 shadow-lg border-2 border-red-300">
+        <p class="text-xl text-gray-800 font-semibold">
+          Don't let this opportunity slip away. The truth is waiting for you.
+        </p>
+      </div>
+
+      <a href="/#button-link" target="_blank" class="w-full md:w-auto block md:inline-block text-xl md:text-3xl font-bold bg-gradient-to-r from-red-600 via-red-700 to-red-800 text-white py-6 px-8 md:px-16 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 text-center animate-bounce button-link">
+        🚨 Click Here To Expose Everything – 90% OFF 🚨
+      </a>
+    </div>
+  </div>
+
+  <!-- FAQ Section (from page4) -->
+  <div class="bg-white rounded-2xl p-8 mb-12 shadow-xl bg-gradient-to-br from-white to-gray-50">
+    <div class="text-center mb-12">
+      <div class="flex flex-col sm:flex-row items-center justify-center mb-6 gap-2 sm:gap-0">
+        <span class="text-4xl sm:text-5xl mr-0 sm:mr-4">❓</span>
+        <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 text-center">
+          FREQUENTLY ASKED QUESTIONS
+        </h3>
+        <span class="text-4xl sm:text-5xl ml-0 sm:ml-4">💡</span>
+      </div>
+      <p class="text-xl text-gray-500">
+        Everything you need to know about our system
+      </p>
+    </div>
+    <div class="space-y-6" id="faq-container">
+      <!-- FAQ items will be populated by JavaScript -->
+    </div>
+  </div>
+
+  <div class="bg-white rounded-2xl p-8 mb-12 bg-gradient-to-br from-red-50 to-red-100 border-4 border-red-300 shadow-2xl relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-40 h-40 bg-red-200 rounded-full -translate-y-20 translate-x-20 opacity-30"></div>
+    <div class="absolute bottom-0 left-0 w-32 h-32 bg-red-300 rounded-full translate-y-16 -translate-x-16 opacity-30"></div>
+
+    <div class="text-center relative z-10">
+      <div class="flex flex-col sm:flex-row items-center justify-center mb-8 text-center sm:text-left">
+        <span class="text-4xl sm:text-6xl mr-0 sm:mr-4 animate-pulse">⏰</span>
+        <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-red-700 mt-4 sm:mt-0">
+          FINAL CHANCE - UNLOCK YOUR ANSWERS NOW
+        </h3>
+        <span class="text-4xl sm:text-6xl ml-0 sm:ml-4 animate-pulse mt-4 sm:mt-0">⚡</span>
+      </div>
+
+      <div class="bg-white rounded-xl p-6 mb-8 shadow-lg border-2 border-red-300">
+        <p class="text-xl text-gray-800 font-semibold">
+          Don't let this opportunity slip away. The truth is waiting for you.
+        </p>
+      </div>
+
+      <a href="/#button-link" target="_blank" class="w-full md:w-auto block md:inline-block text-xl md:text-3xl font-bold bg-gradient-to-r from-red-600 via-red-700 to-red-800 text-white py-6 px-8 md:px-16 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 text-center animate-bounce button-link">
+        🚨 Click Here To Expose Everything – 90% OFF 🚨
+      </a>
+    </div>
+  </div>
+
+  <!-- Guarantee Section (from page4) -->
+  <div class="bg-white rounded-2xl p-8 mb-12 shadow-xl bg-gradient-to-br from-green-50 to-white border-2 border-green-200">
+    <div class="text-center">
+      <div class="flex items-center justify-center mb-8">
+        <span class="text-5xl mr-4">🛡️</span>
+        <h3 class="text-3xl md:text-4xl font-bold text-gray-800">
+          OUR GUARANTEE
+        </h3>
+        <span class="text-5xl ml-4">✅</span>
+      </div>
+
+      <div class="bg-white rounded-xl p-8 shadow-lg mb-8 border-2 border-green-300">
+        <div class="flex items-start space-x-4 mb-6">
+          <div class="text-4xl">📋</div>
+          <div class="text-left">
+            <p class="text-lg text-gray-800 leading-relaxed">
+              In accordance with U.S. law, we are required to refund you if
+              you are not satisfied with the application within 14 days.
+              However, being fully confident that our application works
+              perfectly, we have extended this guarantee to 30 days. This
+              means you have twice the time to test the application and see
+              the results for yourself – with no risk. If, for any reason, you
+              are not satisfied, we will refund you – no questions asked.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-green-100 to-green-200 rounded-lg p-4 sm:p-6 border border-green-300">
+          <p class="text-base sm:text-lg text-gray-800 font-semibold mb-4 text-center sm:text-left">
+            If you have any questions regarding refunds, contact:
+          </p>
+          <div class="bg-white rounded-xl p-4 sm:p-6 shadow-md w-full max-w-md mx-auto">
+            <div class="flex flex-col sm:flex-row items-center sm:items-start sm:space-x-4 space-y-2 sm:space-y-0">
+              <div class="text-2xl sm:text-3xl mb-2 sm:mb-0">📞</div>
+              <div class="text-center sm:text-left">
+                <p class="font-bold text-gray-800 text-lg sm:text-xl">
+                  Customer Service
+                </p>
+                <p class="text-blue-600 text-base sm:text-lg font-semibold break-all">
+                  support@deeplinks.site
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-white rounded-2xl p-8 mb-12 bg-gradient-to-br from-red-50 to-red-100 border-4 border-red-300 shadow-2xl relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-40 h-40 bg-red-200 rounded-full -translate-y-20 translate-x-20 opacity-30"></div>
+    <div class="absolute bottom-0 left-0 w-32 h-32 bg-red-300 rounded-full translate-y-16 -translate-x-16 opacity-30"></div>
+
+    <div class="text-center relative z-10">
+      <div class="flex flex-col sm:flex-row items-center justify-center mb-8 text-center sm:text-left">
+        <span class="text-4xl sm:text-6xl mr-0 sm:mr-4 animate-pulse">⏰</span>
+        <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-red-700 mt-4 sm:mt-0">
+          FINAL CHANCE - UNLOCK YOUR ANSWERS NOW
+        </h3>
+        <span class="text-4xl sm:text-6xl ml-0 sm:ml-4 animate-pulse mt-4 sm:mt-0">⚡</span>
+      </div>
+
+      <div class="bg-white rounded-xl p-6 mb-8 shadow-lg border-2 border-red-300">
+        <p class="text-xl text-gray-800 font-semibold">
+          Don't let this opportunity slip away. The truth is waiting for you.
+        </p>
+      </div>
+
+      <a href="/#button-link" target="_blank" class="w-full md:w-auto block md:inline-block text-xl md:text-3xl font-bold bg-gradient-to-r from-red-600 via-red-700 to-red-800 text-white py-6 px-8 md:px-16 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 text-center animate-bounce button-link">
+        🚨 Click Here To Expose Everything – 90% OFF 🚨
+      </a>
+    </div>
+  </div>
+
+  <script>
+    function getScanResults() {
+      try {
+        const locationData = localStorage.getItem("deeplinks-location");
+        let userCity = "Unknown";
+        if (locationData) {
+          const location = JSON.parse(locationData);
+          userCity = location.city || "Unknown";
+        }
+
+        return [
+          {
+            id: "1",
+            title: "Suspicious Messages",
+            description: "47 deleted conversations with unknown contacts",
+            severity: "high",
+            icon: "💬",
+            location: userCity,
+          },
+          {
+            id: "2",
+            title: "Hidden Dating Apps",
+            description: "3 dating applications found in hidden folders",
+            severity: "high",
+            icon: "💕",
+            location: userCity,
+          },
+          {
+            id: "3",
+            title: "Secret Location Data",
+            description:
+              "Multiple visits to unknown addresses during work hours",
+            severity: "medium",
+            icon: "📍",
+            location: userCity,
+          },
+          {
+            id: "4",
+            title: "Inappropriate Photos",
+            description: "23 explicit photos shared with other contacts",
+            severity: "high",
+            icon: "📸",
+            location: userCity,
+          },
+          {
+            id: "5",
+            title: "Late Night Calls",
+            description: "Frequent calls to unknown numbers after midnight",
+            severity: "medium",
+            icon: "📞",
+            location: userCity,
+          },
+          {
+            id: "6",
+            title: "Social Media Secrets",
+            description: "Private accounts with different names and photos",
+            severity: "medium",
+            icon: "👤",
+            location: userCity,
+          },
+        ];
+      } catch (error) {
+        console.error("Error getting scan results:", error);
+        return [];
+      }
+    }
+
+    function getSeverityColor(severity) {
+      switch (severity) {
+        case "high":
+          return "border-red-500 bg-red-50";
+        case "medium":
+          return "border-yellow-500 bg-yellow-50";
+        case "low":
+          return "border-blue-500 bg-blue-50";
+        default:
+          return "border-gray-500 bg-gray-50";
+      }
+    }
+
+    function getSeverityText(severity) {
+      switch (severity) {
+        case "high":
+          return "HIGH RISK";
+        case "medium":
+          return "MEDIUM RISK";
+        case "low":
+          return "LOW RISK";
+        default:
+          return "UNKNOWN";
+      }
+    }
+
+    function formatDate(date) {
+      const options = {
+        year: "numeric",
+        month: "short",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+      };
+      return date.toLocaleDateString("en-US", options);
+    }
+
+    function updateReportDate() {
+      const now = new Date();
+      document.getElementById("report-date").textContent = formatDate(now);
+    }
+
+    function loadPhoneNumber() {
+      const storedPhone = localStorage.getItem("deeplinks-phone");
+      if (storedPhone) {
+        document.getElementById("target-phone-display").textContent =
+          storedPhone;
+        document.getElementById("pricing-phone").textContent = storedPhone;
+        document.getElementById("location-tracking-phone").textContent =
+          storedPhone;
+      } else {
+        document.getElementById("target-phone-display").textContent =
+          "(555) 123-4567";
+        document.getElementById("pricing-phone").textContent =
+          "(555) 123-4567";
+        document.getElementById("location-tracking-phone").textContent =
+          "(555) 123-4567";
+      }
+    }
+
+    function loadProfilePicture() {
+      const profilePic = localStorage.getItem("deeplinks-profile-pic");
+      if (profilePic) {
+        const profileElement = document.getElementById("user-profile-pic");
+        if (profileElement) {
+          profileElement.innerHTML = `<img src="${profilePic}" alt="Profile" class="w-full h-full rounded-full object-cover" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class="text-3xl sm:text-4xl">👤</span>';">`;
+        }
+      }
+    }
+
+    function loadUserLocation() {
+      try {
+        const locationData = localStorage.getItem("deeplinks-location");
+        if (locationData) {
+          const location = JSON.parse(locationData);
+          const locationElement = document.getElementById("user-location");
+          if (locationElement && location.city && location.country) {
+            locationElement.textContent = `${location.city}, ${location.country}`;
+          } else {
+            locationElement.textContent = "Unknown";
+          }
+          // Update all location references in the detailed analysis section
+          const city = location.city || "Unknown";
+          document.getElementById("analysis-location-1").textContent = city;
+          document.getElementById("analysis-location-2").textContent = city;
+          document.getElementById("analysis-location-3").textContent = city;
+          // Update location tracking section
+          document.getElementById("location-tracking-city").textContent =
+            city;
+        } else {
+          document.getElementById("user-location").textContent = "Unknown";
+          document.getElementById("location-tracking-city").textContent =
+            "Unknown";
+        }
+      } catch (error) {
+        console.error("Error loading location:", error);
+        document.getElementById("user-location").textContent = "Unknown";
+        document.getElementById("location-tracking-city").textContent =
+          "Unknown";
+      }
+    }
+
+    function updateAnalysisPhoneNumbers() {
+      const storedPhone = localStorage.getItem("deeplinks-phone");
+      if (storedPhone) {
+        document.getElementById("analysis-phone-1").textContent = storedPhone;
+        document.getElementById("analysis-phone-2").textContent = storedPhone;
+        document.getElementById("analysis-phone-3").textContent = storedPhone;
+        document.getElementById("analysis-phone-4").textContent = storedPhone;
+      }
+    }
+
+    function renderScanResults() {
+      const container = document.getElementById("scan-results");
+      container.innerHTML = "";
+
+      const scanResults = getScanResults();
+      scanResults.forEach((result) => {
+        const resultDiv = document.createElement("div");
+        resultDiv.className = `bg-white rounded-xl p-6 border-l-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 ${getSeverityColor(
+          result.severity
+        )}`;
+
+        resultDiv.innerHTML = `
+                    <div class="flex items-start space-x-4">
+                        <div class="text-4xl p-2 rounded-full bg-white shadow-md">
+                            ${result.icon}
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-3">
+                                <h3 class="font-bold text-gray-800 text-lg">
+                                    ${result.title}
+                                </h3>
+                                <span class="text-xs px-3 py-1 rounded-full font-bold ${result.severity === "high"
+            ? "bg-red-100 text-red-800 border border-red-300"
+            : result.severity === "medium"
+              ? "bg-yellow-100 text-yellow-800 border border-yellow-300"
+              : "bg-blue-100 text-blue-800 border border-blue-300"
+          }">
+                                    ${getSeverityText(result.severity)}
+                                </span>
+                            </div>
+                            <p class="text-sm text-gray-500 leading-relaxed">
+                                ${result.description}
+                            </p>
+                            ${result.location
+            ? `<p class="text-xs text-blue-600 mt-2 font-semibold">📍 Location: ${result.location}</p>`
+            : ""
+          }
+                            <div class="mt-4 flex items-center">
+                                <div class="w-2 h-2 rounded-full mr-2 ${result.severity === "high"
+            ? "bg-red-500"
+            : result.severity === "medium"
+              ? "bg-yellow-500"
+              : "bg-blue-500"
+          }"></div>
+                                <span class="text-xs font-medium text-gray-600">
+                                    ${result.severity === "high"
+            ? "Immediate action required"
+            : result.severity === "medium"
+              ? "Monitor closely"
+              : "Low priority"
+          }
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+        container.appendChild(resultDiv);
+      });
+    }
+
+    // FAQ Data (from page4)
+    const faqData = [
+      {
+        q: "How accurate is this system?",
+        a: "Our AI doesn't guess — it exposes digital proof. Words, photos, messages, hidden files, locations. If it exists, you'll see it.",
+      },
+      {
+        q: "Can my partner hide their activity from this tool?",
+        a: "No chance. Password-protected files, archived chats, deleted images, even single-view content — nothing stays hidden.",
+      },
+      {
+        q: "Will I really see what they're hiding?",
+        a: "Yes. You'll see actual messages, photos, videos, and suspicious contacts. This is raw evidence, not assumptions.",
+      },
+      {
+        q: "Is this information reliable?",
+        a: "This is not a toy. It's powered by surveillance-grade AI, built to catch lies, secrets, and betrayal without fail.",
+      },
+      {
+        q: "What happens if I don't check the full report?",
+        a: "Then you keep living blind. While you hesitate, the cheating continues. Ignoring the truth only makes the betrayal grow.",
+      },
+      {
+        q: "Will my partner know I'm using this?",
+        a: "Never. The process is 100% invisible. They won't see alerts, notifications, or warnings. While they think they're safe, you already have proof.",
+      },
+      {
+        q: "What if they already deleted everything?",
+        a: "Doesn't matter. The system restores erased messages, photos, and files. Deleting is useless — the truth always resurfaces.",
+      },
+      {
+        q: "Does this work anywhere?",
+        a: "Yes. At home, work, hotels, or secret residences — every location is tracked and reported.",
+      },
+      {
+        q: "How fast do I get the results?",
+        a: "Instantly. The AI scans in seconds, and your full report is ready immediately. If something is happening right now, you'll see it now.",
+      },
+      {
+        q: "Why should I pay for this instead of ignoring it?",
+        a: "Because ignoring means choosing to live in a lie. The truth is cheap. Betrayal costs everything.",
+      },
+      {
+        q: "What exactly will I see inside the report?",
+        a: "You'll see hidden conversations, suspicious keywords, private media, restored deleted files, and tracked locations. Nothing left to doubt.",
+      },
+      {
+        q: "What if I don't find anything?",
+        a: "Then you win. You'll know the truth and finally have peace of mind. But if something is happening, you'll catch it red-handed.",
+      },
+      {
+        q: "Can I use this more than once?",
+        a: "Yes. You can scan and re-scan as much as needed. Every time new activity happens, you'll have the proof.",
+      },
+      {
+        q: "Is this legal?",
+        a: "This is digital intelligence for personal security. The report is private, confidential, and for your eyes only. Nobody else will ever know.",
+      },
+      {
+        q: "What's the risk of waiting?",
+        a: "The longer you wait, the more evidence gets buried. While you hesitate, your partner keeps deleting, hiding, and betraying. Every second counts.",
+      },
+    ];
+
+    function renderFAQ() {
+      const container = document.getElementById("faq-container");
+      container.innerHTML = "";
+
+      faqData.forEach((faq, index) => {
+        const faqDiv = document.createElement("div");
+        faqDiv.className =
+          "bg-white rounded-xl p-6 shadow-md border-l-4 border-blue-400 hover:shadow-lg transition-all duration-300 transform hover:scale-105";
+
+        faqDiv.innerHTML = `
+                    <h4 class="font-bold text-gray-800 mb-4 text-xl flex items-start">
+                        <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-bold mr-4 mt-1">
+                            ${index + 1}
+                        </span>
+                        ${faq.q}
+                    </h4>
+                    <p class="text-base text-gray-500 leading-relaxed ml-12">
+                        ${faq.a}
+                    </p>
+                `;
+
+        container.appendChild(faqDiv);
+      });
+    }
+
+    // ALTERAR AQUI
+    const LINK_CHECKOUT = "LINK DO CHECKOUT";
+    // ALTERAR AQUI
+
+    function updateUpsellLinks() {
+      const upsellLinks = document.querySelectorAll(".button-link");
+      upsellLinks.forEach((link) => {
+        link.href = LINK_CHECKOUT;
+      });
+    }
+
+    // Initialize page
+    window.onload = function () {
+      updateReportDate();
+      loadPhoneNumber();
+      loadProfilePicture();
+      loadUserLocation();
+      updateAnalysisPhoneNumbers();
+      renderScanResults();
+      renderFAQ();
+      updateUpsellLinks();
+    };
+  </script>
+
+
+</body>
+
+</html>

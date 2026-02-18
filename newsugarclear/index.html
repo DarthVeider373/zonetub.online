@@ -7,7 +7,6 @@
   <meta name="keywords" content="SugarClear">
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- OG tags (adjust for your domain) -->
   <meta property="og:url" content="">
   <meta property="og:image" name="image" content="images/social-share.webp">
   <meta property="twitter:image" content="images/social-share.webp">
@@ -16,16 +15,12 @@
   <meta charset="utf-8">
   <link rel="icon" href="images/FavIcon - SugarClear.png">
 
-  <!-- GoogleFonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <!-- END GoogleFonts -->
 
-  <!-- Page Styles -->
   <link rel="stylesheet" type="text/css" href="css/styles.css">
 
-  <!-- CHECKOUT LINKS (Option A: real href in HTML + optional constants) -->
   <script>
     const MONTHLY_REFILLS_LINK = "https://sugclean.mycartpanda.com/checkout/201627879:1?afid=Sjwa3GOGN5"; // 2 bottles
     const MOST_POPULAR_LINK   = "https://sugclean.mycartpanda.com/checkout/201627881:1?afid=Sjwa3GOGN5"; // 3 bottles
@@ -38,7 +33,6 @@
       .text-first h3 { font-size: 0.9em !important; }
     }
 
-    /* Sticky footer */
     html, body { height: 100%; }
     body { margin: 0; }
     #container { min-height: 100vh; display: flex; flex-direction: column; }
@@ -96,7 +90,7 @@
         </script>
       </div>
 
-      <!-- QUIZ SECTION (NOW APPEARS ABOVE "Please check if the sound is on.") -->
+      <!-- QUIZ SECTION (above sound line) -->
       <div id="quizSection" style="display: none; margin-top: 24px;">
         <div class="max-w-3xl mx-auto">
           <div class="bg-white rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.15)] p-8 md:p-12 relative">
@@ -254,7 +248,7 @@
         </div>
       </div>
 
-      <!-- Sound check (now BELOW quiz) -->
+      <!-- Sound check -->
       <div class="flex items-center justify-center mt-8 gap-3">
         <i class="fa-solid fa-volume-high text-lg"></i>
         <p class="text-black font-medium text-base leading-relaxed">Please check if the sound is on.</p>
@@ -321,7 +315,7 @@
           </div>
         </div>
 
-        <!-- Most Popular Package (6 Bottles) -->
+        <!-- Most Popular Package -->
         <div class="bg-[#33c0c4] rounded-3xl shadow-lg shadow-black/40 p-4 md:p-6 relative transform md:scale-105 border-4 border-[#7ceef2] transition-transform duration-300 md:hover:scale-110 order-1 md:order-2">
           <div class="bg-[#fff] text-center py-2 rounded-t-2xl absolute top-0 left-0 right-0">
             <span class="text-[#7ceef2] font-bold">MOST POPULAR</span>
@@ -360,7 +354,7 @@
           </div>
         </div>
 
-        <!-- Bundle Package (3 Bottles) -->
+        <!-- Bundle Package -->
         <div class="bg-white rounded-3xl shadow-lg p-4 md:p-6 relative border-4 border-[#7ceef2] transition-transform duration-300 md:hover:scale-105 order-2 md:order-3">
           <div class="hidden md:flex justify-center text-center bg-[#7ceef2] py-2 rounded-t-2xl absolute top-0 left-0 right-0">
             <span class="text-white font-bold">BUNDLE</span>
@@ -397,7 +391,7 @@
 
       </div>
 
-      <!-- Money Back Guarantee (COLOR CHANGED TO #33c0c4) -->
+      <!-- Money Back Guarantee -->
       <section class="bg-[#33c0c4]">
         <div class="max-w-4xl mx-auto px-4 py-8 text-center text-white">
           <h2 class="text-[#ffff] text-3xl md:text-4xl font-bold mb-4">100% Satisfaction or Your Money Back</h2>
@@ -490,125 +484,6 @@
         </div>
       </div>
 
-      <!-- Countdown -->
-      <div class="bg-[#33c0c4] py-8 px-4 text-center">
-        <h2 class="text-white text-xl md:text-4xl font-bold leading-tight mb-2 mx-auto max-w-2xl">
-          Claim Your Discounted SugarClear<br>
-          <h2 class="text-[#7ceef2] text-xl md:text-4xl font-bold leading-tight mb-2 mx-auto max-w-2xl">Now While Supplies Last!</h2>
-        </h2>
-        <div class="text-white text-4xl md:text-6xl font-bold mt-2 md:mt-8 countdown-timer tracking-wider font-sans">
-          16:42
-        </div>
-      </div>
-
-      <!-- Pricing Cards 2 -->
-      <div class="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-
-        <div class="bg-white rounded-3xl shadow-lg p-4 md:p-6 relative border-4 border-[#7ceef2] transition-transform duration-300 md:hover:scale-105 order-3 md:order-1">
-          <div class="hidden md:flex justify-center text-center bg-[#7ceef2] py-2 rounded-t-2xl absolute top-0 left-0 right-0">
-            <span class="text-white font-bold">BASIC</span>
-          </div>
-          <div class="flex flex-col md:block md:mt-8">
-            <div class="flex items-start md:block text-center">
-              <div class="w-1/2 md:w-full">
-                <h3 class="text-2xl md:text-4xl font-bold text-black">2 BOTTLES</h3>
-                <p class="text-gray-600 text-xl md:text-2xl font-bold mb-4">60 Day Supply</p>
-                <img src="images/2 CAPS.png" alt="2 Bottles" class="mx-auto mb-4 h-[150px]">
-              </div>
-              <div class="w-1/2 md:w-full">
-                <div class="flex items-baseline justify-center mb-4">
-                  <span class="text-black text-5xl md:text-6xl font-bold">$79</span>
-                  <span class="text-black text-xl font-bold ml-1">/bottle</span>
-                </div>
-                <a href="https://sugclean.mycartpanda.com/checkout/201627879:1?afid=Sjwa3GOGN5" id="monthlyLink2" class="cta">
-                  <img src="images/button.webp" alt="Buy Now" class="w-full mb-4 cursor-pointer button-hover">
-                </a>
-                <div class="text-center">
-                  <p class="text-gray-600 text-md md:text-lg mb-1">TOTAL: <span class="line-through">$358</span> $158</p>
-                  <div class="flex justify-center gap-1 mb-2">
-                    <img src="images/cards.webp" alt="Payment methods" class="h-8 md:h-5">
-                  </div>
-                  <p class="text-black font-bold">+ <a class="text-[#7ceef2] font-bold">9.99</a> SHIPPING</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-[#33c0c4] rounded-3xl shadow-lg shadow-black/40 p-4 md:p-6 relative transform md:scale-105 border-4 border-[#7ceef2] transition-transform duration-300 md:hover:scale-110 order-1 md:order-2">
-          <div class="bg-[#fff] text-center py-2 rounded-t-2xl absolute top-0 left-0 right-0">
-            <span class="text-[#7ceef2] font-bold">MOST POPULAR</span>
-          </div>
-          <div class="flex flex-col md:block mt-8">
-            <div class="flex items-start md:block text-center">
-              <div class="w-1/2 md:w-full">
-                <h3 class="text-2xl md:text-4xl font-bold text-[#ffff]">6 BOTTLES</h3>
-                <p class="text-[#ffff] text-xl md:text-2xl font-bold mb-4">180 Day Supply</p>
-                <img src="images/6 CAPS.png" alt="6 Bottles" class="mx-auto md:mb-4 h-30 md:h-48">
-              </div>
-              <div class="w-1/2 md:w-full">
-                <div class="flex items-baseline justify-center mb-4">
-                  <span class="text-[#ffff] text-5xl md:text-6xl font-bold">$49</span>
-                  <span class="text-[#ffff] text-xl font-bold ml-1">/bottle</span>
-                </div>
-                <div class="flex flex-col gap-1 mb-4">
-                  <p class="text-[#ffff] md:text-xl font-bold">✓ FREE BONUSES!</p>
-                  <p class="text-[#ffe312] text-sm md:text-xl font-bold">✓ FREE US SHIPPING!</p>
-                </div>
-                <div class="relative w-full mb-4">
-                  <a href="https://sugclean.mycartpanda.com/checkout/201627880:1?afid=Sjwa3GOGN5" id="bestValueLink2" class="cta">
-                    <img src="images/button.webp" alt="Buy Now" class="w-full cursor-pointer button-hover">
-                    <img src="images/cursor.webp" alt="Click here" class="absolute -right-8 -bottom-8 h-14 animate-bounce-diagonal">
-                  </a>
-                </div>
-                <div class="text-center">
-                  <p class="text-[#ffff] text-md md:text-lg mb-1">TOTAL: <span class="line-through">$1074</span> $294</p>
-                  <div class="flex justify-center gap-1 mb-2">
-                    <img src="images/cards.webp" alt="Payment methods" class="h-8 md:h-5">
-                  </div>
-                  <a class="text-[#ffe312] font-bold">FREE</a><a class="text-[#ffff] font-bold"> SHIPPING</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-white rounded-3xl shadow-lg p-4 md:p-6 relative border-4 border-[#7ceef2] transition-transform duration-300 md:hover:scale-105 order-2 md:order-3">
-          <div class="hidden md:flex justify-center text-center bg-[#7ceef2] py-2 rounded-t-2xl absolute top-0 left-0 right-0">
-            <span class="text-white font-bold">BUNDLE</span>
-          </div>
-          <div class="flex flex-col md:block md:mt-8">
-            <div class="flex items-start md:block md:text-center">
-              <div class="w-1/2 md:w-full">
-                <h3 class="text-2xl md:text-4xl font-bold text-black">3 BOTTLES</h3>
-                <p class="text-gray-600 text-xl md:text-2xl font-bold mb-4">90 Day Supply</p>
-                <img src="images/3 CAPS.png" alt="3 Bottles" class="mx-auto mb-4 h-[150px]">
-              </div>
-              <div class="w-1/2 md:w-full">
-                <div class="flex items-baseline justify-center mb-4">
-                  <span class="text-black text-5xl md:text-6xl font-bold">$69</span>
-                  <span class="text-black text-xl md:text-2xl font-bold ml-1">/bottle</span>
-                </div>
-                <div class="flex flex-col gap-1 mb-4">
-                  <p class="text-[#ffe312] md:text-xl font-bold">✓ FREE BONUSES!</p>
-                </div>
-                <a href="https://sugclean.mycartpanda.com/checkout/201627881:1?afid=Sjwa3GOGN5" id="popularLink2" class="cta">
-                  <img src="images/button.webp" alt="Buy Now" class="w-full mb-4 cursor-pointer button-hover">
-                </a>
-                <div class="text-center">
-                  <p class="text-gray-600 text-md md:text-lg mb-1">TOTAL: <span class="line-through">$537</span> $207</p>
-                  <div class="flex justify-center gap-1 mb-2">
-                    <img src="images/cards.webp" alt="Payment methods" class="h-8 md:h-5">
-                  </div>
-                  <a class="text-red-600 font-bold">FREE </a><a class="text-black font-bold">SHIPPING</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
       <!-- FAQ Section -->
       <div class="mx-auto px-4 py-16 bg-[#7ceef2]">
         <h2 class="text-white text-4xl font-bold text-center mb-12">Frequently Asked Questions</h2>
@@ -638,3 +513,311 @@
           <div class="border border-gray-200 rounded-lg overflow-hidden">
             <button onclick="toggleFAQ(3)" class="w-full px-6 py-4 text-left bg-white hover:bg-gray-50 flex justify-between items-center">
               <span class="text-xl font-semibold text-gray-800">Will SugarClear Help Support My Health Goals?</span>
+              <i id="faq-icon-3" class="fas fa-plus text-[#1565C0]"></i>
+            </button>
+            <div id="faq-3" class="hidden px-6 py-4 bg-gray-50">
+              <p class="text-gray-700">SugarClear is designed to support metabolic health and help maintain healthy blood sugar levels as part of a balanced lifestyle. Many customers report feeling more in control of their wellness journey when using SugarClear consistently, along with proper nutrition and regular activity. While individual results may vary, SugarClear aims to be a helpful addition to your routine.</p>
+            </div>
+          </div>
+
+          <div class="border border-gray-200 rounded-lg overflow-hidden">
+            <button onclick="toggleFAQ(4)" class="w-full px-6 py-4 text-left bg-white hover:bg-gray-50 flex justify-between items-center">
+              <span class="text-xl font-semibold text-gray-800">What If SugarClear Doesn't Meet My Expectations?</span>
+              <i id="faq-icon-4" class="fas fa-plus text-[#1565C0]"></i>
+            </button>
+            <div id="faq-4" class="hidden px-6 py-4 bg-gray-50">
+              <p class="text-gray-700">We want you to feel confident in trying SugarClear, which is why we offer a 60-day satisfaction guarantee. If you're not satisfied with your purchase for any reason, simply contact us within 60 days for a refund—no questions asked.</p>
+            </div>
+          </div>
+
+          <div class="border border-gray-200 rounded-lg overflow-hidden">
+            <button onclick="toggleFAQ(5)" class="w-full px-6 py-4 text-left bg-white hover:bg-gray-50 flex justify-between items-center">
+              <span class="text-xl font-semibold text-gray-800">How Many Bottles Should I Purchase?</span>
+              <i id="faq-icon-5" class="fas fa-plus text-[#1565C0]"></i>
+            </button>
+            <div id="faq-5" class="hidden px-6 py-4 bg-gray-50">
+              <p class="text-gray-700">For optimal results, we recommend starting with a 3-month or 6-month supply of SugarClear to allow time for your body to experience the benefits of consistent use. A 30-day supply is a great way to get started, but longer use may provide more noticeable support for your overall health.</p>
+            </div>
+          </div>
+
+          <div class="border border-gray-200 rounded-lg overflow-hidden">
+            <button onclick="toggleFAQ(6)" class="w-full px-6 py-4 text-left bg-white hover:bg-gray-50 flex justify-between items-center">
+              <span class="text-xl font-semibold text-gray-800">How Soon Will I Receive My SugarClear Order?</span>
+              <i id="faq-icon-6" class="fas fa-plus text-[#1565C0]"></i>
+            </button>
+            <div id="faq-6" class="hidden px-6 py-4 bg-gray-50">
+              <p class="text-gray-700">Orders are processed and shipped within 2-3 business days. For customers in the United States, delivery typically takes 5-7 business days. International delivery times may vary based on local customs, but generally range from 10 to 12 days.</p>
+            </div>
+          </div>
+
+          <div class="border border-gray-200 rounded-lg overflow-hidden">
+            <button onclick="toggleFAQ(7)" class="w-full px-6 py-4 text-left bg-white hover:bg-gray-50 flex justify-between items-center">
+              <span class="text-xl font-semibold text-gray-800">What Should I Do Next?</span>
+              <i id="faq-icon-7" class="fas fa-plus text-[#1565C0]"></i>
+            </button>
+            <div id="faq-7" class="hidden px-6 py-4 bg-gray-50">
+              <p class="text-gray-700">If you're ready to prioritize your health and explore the potential benefits of SugarClear, select your preferred package below. Complete your order on the next page, and we'll ensure your SugarClear is shipped promptly so you can begin your journey toward better wellness.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+    <!-- END productSection -->
+
+    <!-- Footer (NOW ALWAYS VISIBLE) -->
+    <footer id="footer-init" class="text-start">
+      <a href="#" class="privacy">Privacy Policy</a>
+      <br><br>
+      <a href="#" class="terms">Terms of Use</a>
+      <br><br>
+      <h3 class="mb-0">SugarClear 2025. All rights reserved.</h3>
+    </footer>
+
+  </main>
+
+  <script>
+    // ============================================
+    // QUIZ - SHOW TIME IN SECONDS (SET TO 0)
+    // ============================================
+    let quizAlreadyShown = false;
+    const QUIZ_TIME = 0;
+
+    function checkQuizCompleted() {
+      try {
+        const quizCompleted = localStorage.getItem('sugarclear_quiz_completed_v2');
+        if (quizCompleted === 'true') {
+          const productSection = document.getElementById('productSection');
+          if (productSection) productSection.style.display = 'block';
+          return true;
+        }
+      } catch (e) {}
+      return false;
+    }
+
+    function showQuizSection() {
+      if (quizAlreadyShown) return;
+      quizAlreadyShown = true;
+
+      const quizSection = document.getElementById('quizSection');
+      if (quizSection) {
+        quizSection.style.display = 'block';
+        setTimeout(() => {
+          quizSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 0);
+      }
+    }
+
+    function startQuizMonitoring() {
+      if (checkQuizCompleted()) return;
+
+      if (typeof smartplayer === 'undefined') {
+        setTimeout(startQuizMonitoring, 200);
+        return;
+      }
+      if (!smartplayer.instances || smartplayer.instances.length === 0) {
+        setTimeout(startQuizMonitoring, 200);
+        return;
+      }
+
+      const player = smartplayer.instances[0];
+      if (!player.video) {
+        setTimeout(startQuizMonitoring, 200);
+        return;
+      }
+
+      if (QUIZ_TIME === 0) {
+        showQuizSection();
+        return;
+      }
+
+      player.on('timeupdate', function() {
+        const currentTime = Math.floor(player.video.currentTime);
+        if (currentTime >= QUIZ_TIME && !quizAlreadyShown) showQuizSection();
+      });
+
+      player.on('play', function() {
+        const currentTime = Math.floor(player.video.currentTime);
+        if (currentTime >= QUIZ_TIME && !quizAlreadyShown) showQuizSection();
+      });
+    }
+
+    setTimeout(startQuizMonitoring, 0);
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const quizSection = document.getElementById('quizSection');
+      const productSection = document.getElementById('productSection');
+      if (quizSection) quizSection.style.display = 'none';
+      if (productSection) productSection.style.display = 'none';
+    });
+
+    document.addEventListener('DOMContentLoaded', checkQuizCompleted);
+
+    // ============================================
+    // QUIZ LOGIC
+    // ============================================
+    const quizData = { age:'', weight:'', duration:'', glucose:'', symptoms:[] };
+    let currentQ = 1;
+
+    function setupQuizOptions(questionNum, buttonId) {
+      const options = document.querySelectorAll(`#question${questionNum} .quiz-option:not(label)`);
+      const button = document.getElementById(buttonId);
+      if (!options.length || !button) return;
+
+      options.forEach(option => {
+        option.addEventListener('click', function() {
+          options.forEach(o => {
+            o.classList.remove('border-red-500','bg-red-500','text-white','shadow-xl');
+            o.classList.add('border-gray-200','bg-white');
+          });
+          this.classList.remove('border-gray-200','bg-white');
+          this.classList.add('border-red-500','bg-red-500','text-white','shadow-xl');
+
+          const dataKey = ['age','weight','duration','glucose'][questionNum - 1];
+          quizData[dataKey] = this.dataset.value;
+          button.disabled = false;
+        });
+      });
+    }
+
+    function goToQuestion(num) {
+      const currentQuestion = document.getElementById(`question${currentQ}`);
+      const nextQuestion = document.getElementById(`question${num}`);
+      const headline = document.getElementById('quizHeadline');
+
+      if (currentQuestion) currentQuestion.classList.add('hidden');
+      if (nextQuestion) nextQuestion.classList.remove('hidden');
+
+      if (num > 1 && headline) headline.classList.add('hidden');
+      currentQ = num;
+    }
+
+    function showLoading() {
+      const question5 = document.getElementById('question5');
+      const loadingScreen = document.getElementById('loadingScreen');
+
+      if (question5) question5.classList.add('hidden');
+      if (loadingScreen) loadingScreen.classList.remove('hidden');
+
+      const steps = ['step1','step2','step3','step4'];
+      let delay = 0;
+
+      steps.forEach((stepId, index) => {
+        setTimeout(() => {
+          const step = document.getElementById(stepId);
+          if (step) {
+            step.classList.remove('opacity-30','border-transparent');
+            step.classList.add('opacity-100','bg-white','shadow-lg','border-[#4DD0D3]','translate-x-2');
+          }
+
+          if (index === steps.length - 1) {
+            setTimeout(() => {
+              const quizSection = document.getElementById('quizSection');
+              const productSection = document.getElementById('productSection');
+
+              if (quizSection) quizSection.style.display = 'none';
+              if (productSection) productSection.style.display = 'block';
+
+              try {
+                localStorage.setItem('sugarclear_quiz_completed_v2', 'true');
+              } catch(e) {}
+
+              setTimeout(() => scrollToProducts(), 0);
+            }, 0);
+          }
+        }, delay);
+        delay += 1250;
+      });
+    }
+
+    function scrollToProducts() {
+      const productSection = document.getElementById('productSection');
+      if (productSection) productSection.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      setupQuizOptions(1, 'btn1');
+      setupQuizOptions(3, 'btn3');
+      setupQuizOptions(4, 'btn4');
+
+      const weightInput = document.getElementById('weightInput');
+      const btn2 = document.getElementById('btn2');
+      if (weightInput && btn2) {
+        weightInput.addEventListener('input', function() {
+          const weight = parseInt(this.value);
+          if (weight >= 50 && weight <= 500) {
+            quizData.weight = weight;
+            btn2.disabled = false;
+          } else {
+            btn2.disabled = true;
+          }
+        });
+      }
+
+      const checkboxes = document.querySelectorAll('.symptom-checkbox');
+      const btn5 = document.getElementById('btn5');
+      if (checkboxes.length && btn5) {
+        checkboxes.forEach(checkbox => {
+          checkbox.addEventListener('change', function() {
+            quizData.symptoms = Array.from(checkboxes).filter(cb => cb.checked).map(cb => cb.value);
+            btn5.disabled = quizData.symptoms.length === 0;
+          });
+        });
+      }
+
+      const btn1 = document.getElementById('btn1');
+      const btn2 = document.getElementById('btn2');
+      const btn3 = document.getElementById('btn3');
+      const btn4 = document.getElementById('btn4');
+      const btn5 = document.getElementById('btn5');
+
+      if (btn1) btn1.addEventListener('click', () => goToQuestion(2));
+      if (btn2) btn2.addEventListener('click', () => goToQuestion(3));
+      if (btn3) btn3.addEventListener('click', () => goToQuestion(4));
+      if (btn4) btn4.addEventListener('click', () => goToQuestion(5));
+      if (btn5) btn5.addEventListener('click', showLoading);
+    });
+
+    // ============================================
+    // FAQ Toggle
+    // ============================================
+    function toggleFAQ(num) {
+      const faqContent = document.getElementById(`faq-${num}`);
+      const faqIcon = document.getElementById(`faq-icon-${num}`);
+
+      if (faqContent.classList.contains('hidden')) {
+        faqContent.classList.remove('hidden');
+        faqIcon.classList.remove('fa-plus');
+        faqIcon.classList.add('fa-minus');
+      } else {
+        faqContent.classList.add('hidden');
+        faqIcon.classList.remove('fa-minus');
+        faqIcon.classList.add('fa-plus');
+      }
+    }
+
+    // ============================================
+    // Countdown Timer
+    // ============================================
+    function startCountdown(duration, display) {
+      let timer = duration, minutes, seconds;
+      setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+        display.forEach(el => { el.textContent = minutes + ":" + seconds; });
+        if (--timer < 0) timer = duration;
+      }, 1000);
+    }
+
+    window.onload = function () {
+      const duration = 16 * 60 + 42;
+      const displays = document.querySelectorAll('.countdown-timer');
+      startCountdown(duration, displays);
+    };
+  </script>
+
+</body>
+</html>

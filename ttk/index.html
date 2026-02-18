@@ -1637,7 +1637,7 @@ window.onload = function () {
 };
 
 // ============================================
-// CTA Links — FIX: merge correto de parâmetros
+// CTA Links — FIX: merge correto de parâmetros + href visível no hover
 // ============================================
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -1656,24 +1656,33 @@ document.addEventListener('DOMContentLoaded', function () {
     return finalParams ? baseUrl + '?' + finalParams : baseUrl;
   }
 
+  // Monthly (2 potes)
+  var monthlyUrl = buildCheckoutUrl(MONTHLY_REFILLS_LINK);
   document.querySelectorAll('[id^="monthlyLink"]').forEach(function(link) {
+    link.href = monthlyUrl;
     link.addEventListener('click', function(e) {
       e.preventDefault();
-      window.location.href = buildCheckoutUrl(MONTHLY_REFILLS_LINK);
+      window.location.href = monthlyUrl;
     });
   });
 
+  // Best Value (6 potes)
+  var bestValueUrl = buildCheckoutUrl(BEST_VALUE_LINK);
   document.querySelectorAll('[id^="bestValueLink"]').forEach(function(link) {
+    link.href = bestValueUrl;
     link.addEventListener('click', function(e) {
       e.preventDefault();
-      window.location.href = buildCheckoutUrl(BEST_VALUE_LINK);
+      window.location.href = bestValueUrl;
     });
   });
 
+  // Most Popular (3 potes)
+  var popularUrl = buildCheckoutUrl(MOST_POPULAR_LINK);
   document.querySelectorAll('[id^="popularLink"]').forEach(function(link) {
+    link.href = popularUrl;
     link.addEventListener('click', function(e) {
       e.preventDefault();
-      window.location.href = buildCheckoutUrl(MOST_POPULAR_LINK);
+      window.location.href = popularUrl;
     });
   });
 });

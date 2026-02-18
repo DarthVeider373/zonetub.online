@@ -12,22 +12,22 @@
 	<meta charset="utf-8">
 	<link rel="icon" href="images/FavIcon - SugarClear.png">
 
-	
+
 	<!-- GoogleFonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 	<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 	<!-- END GoogleFonts -->
 
-	
 
-	
+
+
 
 	<!-- Page Styles -->
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
-	
-	
-	
+
+
+
 
 <!--ADICIONAR O CHECKOUT AQUI, NO LUGAR DA #-->
 	 <script>
@@ -45,8 +45,8 @@
 				font-size: 0.9em !important;
 			}
 		}
-		
-	
+
+
         /* Sticky footer (mantém o rodapé no final da página em desktop e mobile) */
         html, body { height: 100%; }
         body { margin: 0; }
@@ -54,9 +54,27 @@
         .principal { flex: 1 0 auto; }
         #footer-init { margin-top: auto; flex-shrink: 0; }
 
+	
+        /* VSL: remove white gap on mobile + keep 16:9 area */
+        .vsl-player{
+            width:100%;
+            max-width: 64rem; /* ~ max-w-5xl */
+            margin: 0 auto;
+            aspect-ratio: 16 / 9;
+        }
+        .vsl-player vturb-smartplayer{
+            width:100% !important;
+            height:100% !important;
+            display:block !important;
+        }
+        @media (max-width: 767px){
+            /* tighten spacing right under headline */
+            .container.mx-auto{ padding-top: 0 !important; }
+        }
+
 	</style>
 
-<!--ADICIONAR A Velocidade da VSL-->
+<!--ADICIONAR A Velocidade da VSL (ATUALIZADO)-->
 <script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
 <link rel="preload" href="https://scripts.converteai.net/cda0fd17-3b99-44d2-a83a-fc66435cb2df/players/6985558e0ad74b94a244526b/v4/player.js" as="script">
 <link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
@@ -100,17 +118,22 @@
   </div>
 </section>
 
-<!-- ADICIONAR A VSL AQUI -->
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:pt-12">
+<!-- ADICIONAR A VSL AQUI (ATUALIZADO) -->
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-6 sm:pt-4">
         <div class="mx-auto w-full max-w-5xl">
-            <vturb-smartplayer id="vid-6985558e0ad74b94a244526b" style="display: block; margin: 0 auto; width: 100%; "></vturb-smartplayer> <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/cda0fd17-3b99-44d2-a83a-fc66435cb2df/players/6985558e0ad74b94a244526b/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
+            <div class="vsl-player"><vturb-smartplayer id="vid-6985558e0ad74b94a244526b" style="display:block;margin:0 auto;width:100%;height:100%;"></vturb-smartplayer> 
+			<script type="text/javascript">
+				var s=document.createElement("script"); 
+				s.src="https://scripts.converteai.net/cda0fd17-3b99-44d2-a83a-fc66435cb2df/players/6985558e0ad74b94a244526b/v4/player.js", 
+				s.async=!0,
+				document.head.appendChild(s); 
+			</script></div>
         </div>
 
-<!-- QUIZ SECTION (agora acima do “Please check if the sound is on.”) -->
-   <div id="quizSection" style="display: none">
+        <div id="quizSection" style="display: none">
             <div class="max-w-3xl mx-auto">
                 <div class="bg-white rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.15)] p-8 md:p-12 relative">
-                    
+
                     <div id="quizHeadline" class="text-center mb-8">
                         <h1 class="text-3xl md:text-4xl font-bold text-red-600 mb-3 leading-tight">
                             Take this 30-second quiz to reveal your Metabolic Profile
@@ -262,12 +285,15 @@
 
                 </div>
             </div>
-        
+
+
+
+
     </div>
     <br>
-  </div>
 
-        <div class="flex items-center justify-center mt-8 gap-3">
+
+<div class="flex items-center justify-center mt-8 gap-3">
             <i class="fa-solid fa-volume-high text-lg"></i>
             <p class="text-black font-medium text-base leading-relaxed">Please check if the sound is on.</p>
         </div>
@@ -275,19 +301,21 @@
 
     <section class="py-4 bg-white">
   <div class="max-w-6xl mx-auto px-4">
-    
+
     <div class="flex flex-wrap items-center justify-center gap-8 md:gap-12 opacity-80">
 
       <img src="images/news-logos.webp" alt="The New York Times" class="h-50 md:h-20 object-contain">
-      
+
     </div>
 
   </div>
 </section>
 
-<!-- DTC / PRODUCT SECTION -->
+
+     <!-- QUIZ SECTION -->
+   <!-- DTC / PRODUCT SECTION -->
     <div id="productSection" style="display: none;">
-        
+
         <!-- Countdown-->
         <div class="bg-[#33c0c4] py-8 px-4 text-center">
             <h2 class="text-white text-xl md:text-4xl font-bold leading-tight mb-2 mx-auto max-w-2xl">
@@ -300,7 +328,7 @@
 
         <!-- Pricing Cards 1-->
         <div class="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-            
+
             <!-- Basic Package -->
             <div class="bg-white rounded-3xl shadow-lg p-4 md:p-6 relative border-4 border-[#7ceef2] transition-transform duration-300 md:hover:scale-105 order-3 md:order-1">
                 <div class="hidden md:flex justify-center text-center bg-[#7ceef2] py-2 rounded-t-2xl absolute top-0 left-0 right-0">
@@ -355,10 +383,10 @@
                                 <p class="text-[#ffe312] text-sm md:text-xl font-bold">✓ FREE US SHIPPING!</p>
                             </div>
                             <div class="relative w-full mb-4">
-                                <a href="https://sugclean.mycartpanda.com/checkout/201627880:1?afid=Sjwa3GOGN5" id="bestValueLink1" class="cta">
+                                <a href="https://sugclean.mycartpanda.com/checkout/201627880:1?afid=Sjwa3GOGN5"id="bestValueLink1" class="cta">
                                 <img src="images/button.webp" alt="Buy Now" class="w-full cursor-pointer button-hover">
                                 <img src="images/cursor.webp" alt="Click here" class="absolute -right-8 -bottom-8 h-14 animate-bounce-diagonal">
-                                </a>                                    
+                                </a>                                            
                             </div>
                             <div class="text-center">
                                 <p class="text-[#ffff] text-md md:text-lg mb-1">TOTAL: <span class="line-through">$1074</span> $294</p>
@@ -412,7 +440,7 @@
   <div class="max-w-4xl mx-auto px-4 py-8 text-center text-white">
     <h2 class="text-[#ffff] text-3xl md:text-4xl font-bold mb-4">100% Satisfaction or Your Money Back</h2>
     <h3 class="text-[#ffe312] text-2xl md:text-3xl font-bold mb-8">60-DAY GUARANTEE</h3>
-    
+
     <div class="flex flex-col md:flex-row items-center gap-8 mb-8">
       <img src="images/guarantee-badge.webp" alt="60 Days Money Back Guarantee" class="w-40 md:w-48">
       <div class="text-left">
@@ -431,7 +459,425 @@
   </div>
 </section>
 
-<!-- (restante do HTML segue exatamente como no arquivo, mantendo cards 2 e 3, FAQ, CTA e footer) -->
+        <!-- Free Shipping Banner -->
+        <div class="bg-[#33c0c4] py-8">
+            <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-6 text-white">
+                <img src="images/shiping.webp" alt="Free Shipping" class="h-20 md:h-24 drop-shadow-lg">
+                <div class="text-center md:text-left">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-2">Every 6 Bottle Order Gets <span class="text-[#ffe312] drop-shadow">FREE Shipping</span> Too!</h2>
+                    <p class="text-xl md:text-2xl text-blue-100">*96% Of Customers Order 6 Bottles (Our Recommended Option)</p>
+                </div>
+            </div>
+        </div>         
+
+         <!-- Testimonials Section -->
+         <div class="max-w-4xl mx-auto px-4 py-12">
+
+            <h2 class="text-center text-3xl font-bold mb-4">Real SugarClear® Users.</h2>
+
+            <!-- Life Changing Results Badge -->
+            <div class="flex justify-center mb-6">
+                <div class="bg-gradient-to-r from-[#7ceef2] to-[#7ceef2] text-white text-center px-4 py-3 rounded-xl text-2xl md:text-3xl font-medium">
+                    Life Changing Results
+                </div>
+            </div>
+
+            <!-- Testimonials -->
+            <div class="space-y-3">
+                <!-- Testimonial 1 -->
+                <div class="bg-gray-50 rounded-xl p-6 border-2 border-[#7ceef2] hover:shadow-lg transition-shadow duration-300">
+                    <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
+                        <img src="images/d1.webp" alt="Robert Anderson" class="w-28 h-28 rounded-full border-4 border-[#7ceef2] shadow-md">
+                        <div class="flex-1 text-center md:text-left">
+                            <div class="flex justify-center md:justify-start text-yellow-400 mb-2 text-lg">
+                                ★★★★★
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Robert Anderson</h3>
+                            <p class="text-gray-600 leading-relaxed">"I could barely manage my diabetes six months ago... things improved steadily until I can confidently say I now have significantly improved blood sugar control and overall health."</p>
+                            <div class="mt-4 flex items-center justify-center md:justify-start gap-2">
+                                <span class="bg-[#cbf2f3] text-[#23a4a8] text-sm font-medium px-3 py-1 rounded">Verified Purchase</span>
+                                <span class="text-gray-500 text-sm">6 months ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-gray-50 rounded-xl p-6 border-2 border-[#7ceef2] hover:shadow-lg transition-shadow duration-300">
+                    <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
+                        <img src="images/d2.webp" alt="Sarah Mitchell" class="w-28 h-28 rounded-full border-4 border-[#7ceef2] shadow-md">
+                        <div class="flex-1 text-center md:text-left">
+                            <div class="flex justify-center md:justify-start text-yellow-400 mb-2 text-lg">
+                                ★★★★★
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Sarah Mitchell</h3>
+                            <p class="text-gray-600 leading-relaxed">"My husband was constantly struggling with the challenges of diabetes, and it was affecting our intimacy. After he started incorporating a diabetes management program for a short period, the positive changes were undeniable. He was thrilled with the results, and our moments together improved significantly."</p>
+                            <div class="mt-4 flex items-center justify-center md:justify-start gap-2">
+                                <span class="bg-[#cbf2f3] text-[#23a4a8] text-sm font-medium px-3 py-1 rounded">Verified Purchase</span>
+                                <span class="text-gray-500 text-sm">2 months ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-gray-50 rounded-xl p-6 border-2 border-[#7ceef2] hover:shadow-lg transition-shadow duration-300">
+                    <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
+                        <img src="images/d3.webp" alt="Michael Chen" class="w-28 h-28 rounded-full border-4 border-[#7ceef2] shadow-md">
+                        <div class="flex-1 text-center md:text-left">
+                            <div class="flex justify-center md:justify-start text-yellow-400 mb-2 text-lg">
+                                ★★★★★
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Michael Chen</h3>
+                            <p class="text-gray-600 leading-relaxed">"Thankfully, my doctor recommended a solution for diabetes management called SugarClear. I followed the regimen diligently. Now I can proudly say my blood sugar levels are well-managed, and my overall health has significantly improved."</p>
+                            <div class="mt-4 flex items-center justify-center md:justify-start gap-2">
+                                <span class="bg-[#cbf2f3] text-[#23a4a8] text-sm font-medium px-3 py-1 rounded">Verified Purchase</span>
+                                <span class="text-gray-500 text-sm">1 month ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Countdown-->
+        <div class="bg-[#33c0c4] py-8 px-4 text-center">
+            <h2 class="text-white text-xl md:text-4xl font-bold leading-tight mb-2 mx-auto max-w-2xl">
+                Claim Your Discounted SugarClear<br> <h2 class="text-[#7ceef2] text-xl md:text-4xl font-bold leading-tight mb-2 mx-auto max-w-2xl">Now While Supplies Last!</h2>
+            </h2>
+            <div class="text-white text-4xl md:text-6xl font-bold mt-2 md:mt-8 countdown-timer tracking-wider font-sans">
+                16:42
+            </div>
+        </div>
+
+       <!-- Pricing Cards 2-->
+        <div class="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+
+            <!-- Basic Package -->
+            <div class="bg-white rounded-3xl shadow-lg p-4 md:p-6 relative border-4 border-[#7ceef2] transition-transform duration-300 md:hover:scale-105 order-3 md:order-1">
+                <div class="hidden md:flex justify-center text-center bg-[#7ceef2] py-2 rounded-t-2xl absolute top-0 left-0 right-0">
+                    <span class="text-white font-bold">BASIC</span>
+                </div>
+                <div class="flex flex-col md:block md:mt-8">
+                    <div class="flex items-start md:block text-center">
+                        <div class="w-1/2 md:w-full">
+                            <h3 class="text-2xl md:text-4xl font-bold text-black">2 BOTTLES</h3>
+                            <p class="text-gray-600 text-xl md:text-2xl font-bold mb-4">60 Day Supply</p>
+                            <img src="images/2 CAPS.png" alt="2 Bottles" class="mx-auto mb-4 h-[150px]">
+                        </div>
+                        <div class="w-1/2 md:w-full">
+                            <div class="flex items-baseline justify-center mb-4">
+                                <span class="text-black text-5xl md:text-6xl font-bold">$79</span>
+                                <span class="text-black text-xl font-bold ml-1">/bottle</span>
+                            </div>
+                            <a href="https://sugclean.mycartpanda.com/checkout/201627879:1?afid=Sjwa3GOGN5" id="monthlyLink2" class="cta">
+                                <img src="images/button.webp" alt="Buy Now" class="w-full mb-4 cursor-pointer button-hover">
+                            </a>
+                            <div class="text-center">
+                                <p class="text-gray-600 text-md md:text-lg mb-1">TOTAL: <span class="line-through">$358</span> $158</p>
+                                <div class="flex justify-center gap-1 mb-2">
+                                    <img src="images/cards.webp" alt="Payment methods" class="h-8 md:h-5">
+                                </div>
+                                <p class="text-black font-bold">+ <a class="text-[#7ceef2] font-bold">9.99</a> SHIPPING</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Most Popular Package -->
+            <div class="bg-[#33c0c4] rounded-3xl shadow-lg shadow-black/40 p-4 md:p-6 relative transform md:scale-105 border-4 border-[#7ceef2] transition-transform duration-300 md:hover:scale-110 order-1 md:order-2">
+                <div class="bg-[#fff] text-center py-2 rounded-t-2xl absolute top-0 left-0 right-0">
+                    <span class="text-[#7ceef2] font-bold">MOST POPULAR</span>
+                </div>
+                <div class="flex flex-col md:block mt-8">
+                    <div class="flex items-start md:block text-center">
+                        <div class="w-1/2 md:w-full">
+                            <h3 class="text-2xl md:text-4xl font-bold text-[#ffff]">6 BOTTLES</h3>
+                            <p class="text-[#ffff] text-xl md:text-2xl font-bold mb-4">180 Day Supply</p>
+                            <img src="images/6 CAPS.png" alt="6 Bottles" class="mx-auto md:mb-4 h-30 md:h-48">
+                        </div>
+                        <div class="w-1/2 md:w-full">
+                            <div class="flex items-baseline justify-center mb-4">
+                                <span class="text-[#ffff] text-5xl md:text-6xl font-bold">$49</span>
+                                <span class="text-[#ffff] text-xl font-bold ml-1">/bottle</span>
+                            </div>
+                            <div class="flex flex-col gap-1 mb-4">
+                                <p class="text-[#ffff] md:text-xl font-bold">✓ FREE BONUSES!</p>
+                                <p class="text-[#ffe312] text-sm md:text-xl font-bold">✓ FREE US SHIPPING!</p>
+                            </div>
+                            <div class="relative w-full mb-4">
+                                <a href="https://sugclean.mycartpanda.com/checkout/201627880:1?afid=Sjwa3GOGN5"id="bestValueLink2" class="cta">
+                                <img src="images/button.webp" alt="Buy Now" class="w-full cursor-pointer button-hover">
+                                <img src="images/cursor.webp" alt="Click here" class="absolute -right-8 -bottom-8 h-14 animate-bounce-diagonal">
+                                </a>                                            
+                            </div>
+                            <div class="text-center">
+                                <p class="text-[#ffff] text-md md:text-lg mb-1">TOTAL: <span class="line-through">$1074</span> $294</p>
+                                <div class="flex justify-center gap-1 mb-2">
+                                    <img src="images/cards.webp" alt="Payment methods" class="h-8 md:h-5">
+                                </div>
+                                <a class="text-[#ffe312] font-bold">FREE</a><a class="text-[#ffff] font-bold"> SHIPPING</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bundle Package -->
+            <div class="bg-white rounded-3xl shadow-lg p-4 md:p-6 relative border-4 border-[#7ceef2] transition-transform duration-300 md:hover:scale-105 order-2 md:order-3">
+                <div class="hidden md:flex justify-center text-center bg-[#7ceef2] py-2 rounded-t-2xl absolute top-0 left-0 right-0">
+                    <span class="text-white font-bold">BUNDLE</span>
+                </div>
+                <div class="flex flex-col md:block md:mt-8">
+                    <div class="flex items-start md:block md:text-center">
+                        <div class="w-1/2 md:w-full">
+                            <h3 class="text-2xl md:text-4xl font-bold text-black">3 BOTTLES</h3>
+                            <p class="text-gray-600 text-xl md:text-2xl font-bold mb-4">90 Day Supply</p>
+                            <img src="images/3 CAPS.png" alt="3 Bottles" class="mx-auto mb-4 h-[150px]">
+                        </div>
+                        <div class="w-1/2 md:w-full">
+                            <div class="flex items-baseline justify-center mb-4">
+                                <span class="text-black text-5xl md:text-6xl font-bold">$69</span>
+                                <span class="text-black text-xl md:text-2xl font-bold ml-1">/bottle</span>
+                            </div>
+                            <div class="flex flex-col gap-1 mb-4">
+                                <p class="text-[#ffe312] md:text-xl font-bold">✓ FREE BONUSES!</p>
+                            </div>
+                            <a href="https://sugclean.mycartpanda.com/checkout/201627881:1?afid=Sjwa3GOGN5" id="popularLink2" class="cta">
+                                <img src="images/button.webp" alt="Buy Now" class="w-full mb-4 cursor-pointer button-hover">
+                            </a>
+                            <div class="text-center">
+                                <p class="text-gray-600 text-md md:text-lg mb-1">TOTAL: <span class="line-through">$537</span> $207</p>
+                                <div class="flex justify-center gap-1 mb-2">
+                                    <img src="images/cards.webp" alt="Payment methods" class="h-8 md:h-5">
+                                </div>
+                                <a class="text-red-600 font-bold">FREE </a><a class="text-black font-bold">SHIPPING</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="mx-auto px-4 py-16 bg-[#7ceef2]">
+            <h2 class="text-white text-4xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+
+            <!-- FAQ Items -->
+            <div class="max-w-4xl mx-auto space-y-6">
+                <!-- FAQ Item 1 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button onclick="toggleFAQ(1)" class="w-full px-6 py-4 text-left bg-white hover:bg-gray-50 flex justify-between items-center">
+                        <span class="text-xl font-semibold text-gray-800">Is SugarClear e Genuine Product for Supporting Blood Sugar Health?</span>
+                        <i id="faq-icon-1" class="fas fa-plus text-[#1565C0]"></i>
+                    </button>
+                    <div id="faq-1" class="hidden px-6 py-4 bg-gray-50">
+                        <p class="text-gray-700">Yes, SugarClear is a carefully formulated, all-natural dietary supplement designed to support overall blood sugar balance and metabolic health. Its ingredients are selected based on research for their potential to aid in maintaining healthy Glycose levels and promoting metabolic wellness. SugarClear is manufactured in the USA in an FDA-registered facility following strict GMP (Good Manufacturing Practices) guidelines, ensuring quality and safety in every bottle. As with any dietary supplement, we recommend consulting your healthcare provider before starting SugarClear.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button onclick="toggleFAQ(2)" class="w-full px-6 py-4 text-left bg-white hover:bg-gray-50 flex justify-between items-center">
+                        <span class="text-xl font-semibold text-gray-800">Can I Take SugarClear Alongside Other Supplements?</span>
+                        <i id="faq-icon-2" class="fas fa-plus text-[#1565C0]"></i>
+                    </button>
+                    <div id="faq-2" class="hidden px-6 py-4 bg-gray-50">
+                        <p class="text-gray-700">SugarClear is generally well-tolerated and can be used alongside other supplements. However, if you are currently taking products with similar active ingredients, it's best to consult your healthcare provider to ensure they complement each other effectively.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button onclick="toggleFAQ(3)" class="w-full px-6 py-4 text-left bg-white hover:bg-gray-50 flex justify-between items-center">
+                        <span class="text-xl font-semibold text-gray-800">Will SugarClear Help Support My Health Goals?</span>
+                        <i id="faq-icon-3" class="fas fa-plus text-[#1565C0]"></i>
+                    </button>
+                    <div id="faq-3" class="hidden px-6 py-4 bg-gray-50">
+                        <p class="text-gray-700">SugarClear is designed to support metabolic health and help maintain healthy blood sugar levels as part of a balanced lifestyle. Many customers report feeling more in control of their wellness journey when using SugarClear consistently, along with proper nutrition and regular activity. While individual results may vary, SugarClear aims to be a helpful addition to your routine.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button onclick="toggleFAQ(4)" class="w-full px-6 py-4 text-left bg-white hover:bg-gray-50 flex justify-between items-center">
+                        <span class="text-xl font-semibold text-gray-800">What If SugarClear Doesn't Meet My Expectations?</span>
+                        <i id="faq-icon-4" class="fas fa-plus text-[#1565C0]"></i>
+                    </button>
+                    <div id="faq-4" class="hidden px-6 py-4 bg-gray-50">
+                        <p class="text-gray-700">We want you to feel confident in trying SugarClear, which is why we offer a 60-day satisfaction guarantee. If you're not satisfied with your purchase for any reason, simply contact us within 60 days for a refund—no questions asked.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button onclick="toggleFAQ(5)" class="w-full px-6 py-4 text-left bg-white hover:bg-gray-50 flex justify-between items-center">
+                        <span class="text-xl font-semibold text-gray-800">How Many Bottles Should I Purchase?</span>
+                        <i id="faq-icon-5" class="fas fa-plus text-[#1565C0]"></i>
+                    </button>
+                    <div id="faq-5" class="hidden px-6 py-4 bg-gray-50">
+                        <p class="text-gray-700">For optimal results, we recommend starting with a 3-month or 6-month supply of SugarClear to allow time for your body to experience the benefits of consistent use. A 30-day supply is a great way to get started, but longer use may provide more noticeable support for your overall health.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 6 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button onclick="toggleFAQ(6)" class="w-full px-6 py-4 text-left bg-white hover:bg-gray-50 flex justify-between items-center">
+                        <span class="text-xl font-semibold text-gray-800">How Soon Will I Receive My SugarClear Order?</span>
+                        <i id="faq-icon-6" class="fas fa-plus text-[#1565C0]"></i>
+                    </button>
+                    <div id="faq-6" class="hidden px-6 py-4 bg-gray-50">
+                        <p class="text-gray-700">Orders are processed and shipped within 2-3 business days. For customers in the United States, delivery typically takes 5-7 business days. International delivery times may vary based on local customs, but generally range from 10 to 12 days.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 7 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button onclick="toggleFAQ(7)" class="w-full px-6 py-4 text-left bg-white hover:bg-gray-50 flex justify-between items-center">
+                        <span class="text-xl font-semibold text-gray-800">What Should I Do Next?</span>
+                        <i id="faq-icon-7" class="fas fa-plus text-[#1565C0]"></i>
+                    </button>
+                    <div id="faq-7" class="hidden px-6 py-4 bg-gray-50">
+                        <p class="text-gray-700">If you're ready to prioritize your health and explore the potential benefits of SugarClear, select your preferred package below. Complete your order on the next page, and we'll ensure your SugarClear is shipped promptly so you can begin your journey toward better wellness.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="bg-[#33c0c4] py-8 px-4 text-center">
+            <h2 class="text-white text-xl md:text-4xl font-bold leading-tight mb-2 mx-auto max-w-2xl">
+                Claim Your Discounted SugarClear<br> <h2 class="text-[#7ceef2] text-xl md:text-4xl font-bold leading-tight mb-2 mx-auto max-w-2xl">Now While Supplies Last!</h2>
+            </h2>
+            <div class="text-white text-4xl md:text-6xl font-bold mt-2 md:mt-8 countdown-timer tracking-wider font-sans">
+                16:42
+            </div>
+        </div>
+
+        <!-- Pricing Cards 3-->
+        <div class="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+
+            <!-- Basic Package -->
+            <div class="bg-white rounded-3xl shadow-lg p-4 md:p-6 relative border-4 border-[#7ceef2] transition-transform duration-300 md:hover:scale-105 order-3 md:order-1">
+                <div class="hidden md:flex justify-center text-center bg-[#7ceef2] py-2 rounded-t-2xl absolute top-0 left-0 right-0">
+                    <span class="text-white font-bold">BASIC</span>
+                </div>
+                <div class="flex flex-col md:block md:mt-8">
+                    <div class="flex items-start md:block text-center">
+                        <div class="w-1/2 md:w-full">
+                            <h3 class="text-2xl md:text-4xl font-bold text-black">2 BOTTLES</h3>
+                            <p class="text-gray-600 text-xl md:text-2xl font-bold mb-4">60 Day Supply</p>
+                            <img src="images/2 CAPS.png" alt="2 Bottles" class="mx-auto mb-4 h-[150px]">
+                        </div>
+                        <div class="w-1/2 md:w-full">
+                            <div class="flex items-baseline justify-center mb-4">
+                                <span class="text-black text-5xl md:text-6xl font-bold">$79</span>
+                                <span class="text-black text-xl font-bold ml-1">/bottle</span>
+                            </div>
+                            <a href="https://sugclean.mycartpanda.com/checkout/201627879:1?afid=Sjwa3GOGN5" id="monthlyLink3" class="cta">
+                                <img src="images/button.webp" alt="Buy Now" class="w-full mb-4 cursor-pointer button-hover">
+                            </a>
+                            <div class="text-center">
+                                <p class="text-gray-600 text-md md:text-lg mb-1">TOTAL: <span class="line-through">$358</span> $158</p>
+                                <div class="flex justify-center gap-1 mb-2">
+                                    <img src="images/cards.webp" alt="Payment methods" class="h-8 md:h-5">
+                                </div>
+                                <p class="text-black font-bold">+ <a class="text-[#7ceef2] font-bold">9.99</a> SHIPPING</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Most Popular Package -->
+            <div class="bg-[#33c0c4] rounded-3xl shadow-lg shadow-black/40 p-4 md:p-6 relative transform md:scale-105 border-4 border-[#7ceef2] transition-transform duration-300 md:hover:scale-110 order-1 md:order-2">
+                <div class="bg-[#fff] text-center py-2 rounded-t-2xl absolute top-0 left-0 right-0">
+                    <span class="text-[#7ceef2] font-bold">MOST POPULAR</span>
+                </div>
+                <div class="flex flex-col md:block mt-8">
+                    <div class="flex items-start md:block text-center">
+                        <div class="w-1/2 md:w-full">
+                            <h3 class="text-2xl md:text-4xl font-bold text-[#ffff]">6 BOTTLES</h3>
+                            <p class="text-[#ffff] text-xl md:text-2xl font-bold mb-4">180 Day Supply</p>
+                            <img src="images/6 CAPS.png" alt="6 Bottles" class="mx-auto md:mb-4 h-30 md:h-48">
+                        </div>
+                        <div class="w-1/2 md:w-full">
+                            <div class="flex items-baseline justify-center mb-4">
+                                <span class="text-[#ffff] text-5xl md:text-6xl font-bold">$49</span>
+                                <span class="text-[#ffff] text-xl font-bold ml-1">/bottle</span>
+                            </div>
+                            <div class="flex flex-col gap-1 mb-4">
+                                <p class="text-[#ffff] md:text-xl font-bold">✓ FREE BONUSES!</p>
+                                <p class="text-[#ffe312] text-sm md:text-xl font-bold">✓ FREE US SHIPPING!</p>
+                            </div>
+                            <div class="relative w-full mb-4">
+                                <a href="https://sugclean.mycartpanda.com/checkout/201627880:1?afid=Sjwa3GOGN5"id="bestValueLink3" class="cta">
+                                <img src="images/button.webp" alt="Buy Now" class="w-full cursor-pointer button-hover">
+                                <img src="images/cursor.webp" alt="Click here" class="absolute -right-8 -bottom-8 h-14 animate-bounce-diagonal">
+                                </a>                                            
+                            </div>
+                            <div class="text-center">
+                                <p class="text-[#ffff] text-md md:text-lg mb-1">TOTAL: <span class="line-through">$1074</span> $294</p>
+                                <div class="flex justify-center gap-1 mb-2">
+                                    <img src="images/cards.webp" alt="Payment methods" class="h-8 md:h-5">
+                                </div>
+                                <a class="text-[#ffe312] font-bold">FREE</a><a class="text-[#ffff] font-bold"> SHIPPING</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bundle Package -->
+            <div class="bg-white rounded-3xl shadow-lg p-4 md:p-6 relative border-4 border-[#7ceef2] transition-transform duration-300 md:hover:scale-105 order-2 md:order-3">
+                <div class="hidden md:flex justify-center text-center bg-[#7ceef2] py-2 rounded-t-2xl absolute top-0 left-0 right-0">
+                    <span class="text-white font-bold">BUNDLE</span>
+                </div>
+                <div class="flex flex-col md:block md:mt-8">
+                    <div class="flex items-start md:block md:text-center">
+                        <div class="w-1/2 md:w-full">
+                            <h3 class="text-2xl md:text-4xl font-bold text-black">3 BOTTLES</h3>
+                            <p class="text-gray-600 text-xl md:text-2xl font-bold mb-4">90 Day Supply</p>
+                            <img src="images/3 CAPS.png" alt="3 Bottles" class="mx-auto mb-4 h-[150px]">
+                        </div>
+                        <div class="w-1/2 md:w-full">
+                            <div class="flex items-baseline justify-center mb-4">
+                                <span class="text-black text-5xl md:text-6xl font-bold">$69</span>
+                                <span class="text-black text-xl md:text-2xl font-bold ml-1">/bottle</span>
+                            </div>
+                            <div class="flex flex-col gap-1 mb-4">
+                                <p class="text-[#ffe312] md:text-xl font-bold">✓ FREE BONUSES!</p>
+                            </div>
+                            <a href="https://sugclean.mycartpanda.com/checkout/201627881:1?afid=Sjwa3GOGN5" id="popularLink3" class="cta">
+                                <img src="images/button.webp" alt="Buy Now" class="w-full mb-4 cursor-pointer button-hover">
+                            </a>
+                            <div class="text-center">
+                                <p class="text-gray-600 text-md md:text-lg mb-1">TOTAL: <span class="line-through">$537</span> $207</p>
+                                <div class="flex justify-center gap-1 mb-2">
+                                    <img src="images/cards.webp" alt="Payment methods" class="h-8 md:h-5">
+                                </div>
+                                <a class="text-red-600 font-bold">FREE </a><a class="text-black font-bold">SHIPPING</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+				<!-- Footer CB -->
+
+			</div>
+			<!--.esconder--></section>
+
+
 
 			<!-- Footer Init -->
 			<footer id="footer-init" class="text-start">
@@ -445,7 +891,7 @@
 			</footer>
 			<!-- Footer Init -->
 
-		
+
 	</main>
 
 	<script>
@@ -559,7 +1005,228 @@ document.addEventListener('DOMContentLoaded', function () {
     startQuizMonitoring();
 });
 
-	</script>
+// ============================================
+// QUIZ LOGIC - Navegação entre perguntas
+// ============================================
+const quizData = {
+    age: '',
+    weight: '',
+    duration: '',
+    glucose: '',
+    symptoms: []
+};
+
+let currentQ = 1;
+
+function setupQuizOptions(questionNum, buttonId) {
+    const options = document.querySelectorAll(`#question${questionNum} .quiz-option:not(label)`);
+    const button = document.getElementById(buttonId);
+
+    if (!options.length || !button) return;
+
+    options.forEach(option => {
+        option.addEventListener('click', function() {
+            options.forEach(o => {
+                o.classList.remove('border-red-500', 'bg-red-500', 'text-white', 'shadow-xl');
+                o.classList.add('border-gray-200', 'bg-white');
+            });
+            this.classList.remove('border-gray-200', 'bg-white');
+            this.classList.add('border-red-500', 'bg-red-500', 'text-white', 'shadow-xl');
+
+            const dataKey = ['age', 'weight', 'duration', 'glucose'][questionNum - 1];
+            quizData[dataKey] = this.dataset.value;
+            button.disabled = false;
+        });
+    });
+}
+
+function goToQuestion(num) {
+    const currentQuestion = document.getElementById(`question${currentQ}`);
+    const nextQuestion = document.getElementById(`question${num}`);
+    const headline = document.getElementById('quizHeadline');
+
+    if (currentQuestion) currentQuestion.classList.add('hidden');
+    if (nextQuestion) nextQuestion.classList.remove('hidden');
+
+    if (num > 1 && headline) {
+        headline.classList.add('hidden');
+    }
+
+    currentQ = num;
+}
+
+function showLoading() {
+    const question5 = document.getElementById('question5');
+    const loadingScreen = document.getElementById('loadingScreen');
+
+    if (question5) question5.classList.add('hidden');
+    if (loadingScreen) loadingScreen.classList.remove('hidden');
+
+    const steps = ['step1', 'step2', 'step3', 'step4'];
+    let delay = 0;
+
+    steps.forEach((stepId, index) => {
+        setTimeout(() => {
+            const step = document.getElementById(stepId);
+            if (step) {
+                step.classList.remove('opacity-30', 'border-transparent');
+                step.classList.add('opacity-100', 'bg-white', 'shadow-lg', 'border-[#4DD0D3]', 'translate-x-2');
+            }
+
+            if (index === steps.length - 1) {
+                setTimeout(() => {
+                    const quizSection = document.getElementById('quizSection');
+                    const productSection = document.getElementById('productSection');
+
+                    if (quizSection) quizSection.style.display = 'none';
+                    if (productSection) productSection.style.display = 'block';
+
+                    // Salva que o quiz foi completado
+                    try {
+                        localStorage.setItem('sugarclear_quiz_completed_v2', 'true');
+                        console.log('💾 Quiz completado salvo no localStorage');
+                    } catch (e) {
+                        console.log('Não foi possível salvar no localStorage');
+                    }
+
+                    setTimeout(() => {
+                        scrollToProducts();
+                    }, 300);
+                }, 800);
+            }
+        }, delay);
+        delay += 1250;
+    });
+}
+
+function scrollToProducts() {
+    const productSection = document.getElementById('productSection');
+    if (productSection) {
+        productSection.scrollIntoView({behavior: 'smooth', block: 'start'});
+    }
+}
+
+// Inicializa quando DOM carregar
+document.addEventListener('DOMContentLoaded', function() {
+    setupQuizOptions(1, 'btn1');
+    setupQuizOptions(3, 'btn3');
+    setupQuizOptions(4, 'btn4');
+
+    // Weight input
+    const weightInput = document.getElementById('weightInput');
+    const btn2 = document.getElementById('btn2');
+    if (weightInput && btn2) {
+        weightInput.addEventListener('input', function() {
+            const weight = parseInt(this.value);
+            if (weight >= 50 && weight <= 500) {
+                quizData.weight = weight;
+                btn2.disabled = false;
+            } else {
+                btn2.disabled = true;
+            }
+        });
+    }
+
+    // Checkboxes
+    const checkboxes = document.querySelectorAll('.symptom-checkbox');
+    const btn5 = document.getElementById('btn5');
+    if (checkboxes.length && btn5) {
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                quizData.symptoms = Array.from(checkboxes)
+                    .filter(cb => cb.checked)
+                    .map(cb => cb.value);
+                btn5.disabled = quizData.symptoms.length === 0;
+            });
+        });
+    }
+
+    // Botões de navegação
+    const btn1 = document.getElementById('btn1');
+    const btn3 = document.getElementById('btn3');
+    const btn4 = document.getElementById('btn4');
+
+    if (btn1) btn1.addEventListener('click', () => goToQuestion(2));
+    if (btn2) btn2.addEventListener('click', () => goToQuestion(3));
+    if (btn3) btn3.addEventListener('click', () => goToQuestion(4));
+    if (btn4) btn4.addEventListener('click', () => goToQuestion(5));
+    if (btn5) btn5.addEventListener('click', showLoading);
+});
+
+// ============================================
+// FAQ Toggle
+// ============================================
+function toggleFAQ(num) {
+    const faqContent = document.getElementById(`faq-${num}`);
+    const faqIcon = document.getElementById(`faq-icon-${num}`);
+
+    if (faqContent.classList.contains('hidden')) {
+        faqContent.classList.remove('hidden');
+        faqIcon.classList.remove('fa-plus');
+        faqIcon.classList.add('fa-minus');
+    } else {
+        faqContent.classList.add('hidden');
+        faqIcon.classList.remove('fa-minus');
+        faqIcon.classList.add('fa-plus');
+    }
+}
+
+// ============================================
+// Countdown Timer
+// ============================================
+function startCountdown(duration, display) {
+    let timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+        display.forEach(el => {
+            el.textContent = minutes + ":" + seconds;
+        });
+        if (--timer < 0) {
+            timer = duration;
+        }
+    }, 1000);
+}
+
+window.onload = function () {
+    const duration = 16 * 60 + 42;
+    const displays = document.querySelectorAll('.countdown-timer');
+    startCountdown(duration, displays);
+};
+
+// ============================================
+// CTA Links
+// ============================================
+document.addEventListener('DOMContentLoaded', function() {
+    // ✅ Make the real checkout URL appear on hover (and acts as a fallback if JS click is blocked)
+    document.querySelectorAll('[id^="monthlyLink"]').forEach(a => a.href = MONTHLY_REFILLS_LINK);
+    document.querySelectorAll('[id^="bestValueLink"]').forEach(a => a.href = BEST_VALUE_LINK);
+    document.querySelectorAll('[id^="popularLink"]').forEach(a => a.href = MOST_POPULAR_LINK);
+
+    document.querySelectorAll('[id^="monthlyLink"]').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.location.href = MONTHLY_REFILLS_LINK;
+        });
+    });
+
+    document.querySelectorAll('[id^="bestValueLink"]').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.location.href = BEST_VALUE_LINK;
+        });
+    });
+
+    document.querySelectorAll('[id^="popularLink"]').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.location.href = MOST_POPULAR_LINK;
+        });
+    });
+});
+</script>
 
 
 </body></html>
